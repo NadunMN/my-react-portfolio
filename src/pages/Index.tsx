@@ -1,12 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Navigation } from "@/components/Navigation";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Work } from "@/components/sections/Work";
+import { Experience } from "@/components/sections/Experience";
+import { Skills } from "@/components/sections/Skills";
+import { Contact } from "@/components/sections/Contact";
+import { Blog } from "@/components/sections/Blog";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative">
+      {/* Fixed Navigation */}
+      <Navigation className="fixed top-8 right-8 z-50" />
+      
+      {/* Main Content */}
+      <main>
+        <Hero />
+        <About />
+        <Work />
+        <Experience />
+        <Skills />
+        <Contact />
+        <Blog />
+      </main>
+
+      {/* Footer */}
+      <footer className="border-t border-border py-8">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-muted-foreground">
+            © 2024 Nadun Madusanka. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
