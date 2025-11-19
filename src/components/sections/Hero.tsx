@@ -16,13 +16,21 @@ export const Hero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('/public/Images/3982ace2-1d80-4614-8572-dbeb09511827.png')`,
+          // backgroundImage: `url('/public/Images/ChatGPT Image Nov 19, 2025, 06_40_00 PM.png')`,
         }}
       >
-        <div className="absolute inset-0 w-full bg-gradient-to-r from-black via-black/80 to-transparent ">
-          {/* <img src="/public/Images/61534b81-e259-426b-9243-97517312b3c1.png" alt="" /> */}
-        </div>
+        <div className="absolute inset-0 flex items-center justify-center z-0">
+        <div className="w-[500px] h-[500px] bg-white blur-[200px]"></div>
       </div>
+      
+        <div className="absolute inset-0 w-full bg-gradient-to-r from-black via-black/80 to-transparent flex items-center justify-center z-10">
+          <img className="object-contain" src="/public/Images/ChatGPT Image Nov 19, 2025, 06_40_00 PM.png" alt="" />
+        </div>
+
+      </div>
+
+      {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div> */}
+      
 
       {/* Navigation */}
       <nav className="relative z-20 flex items-center justify-between p-6 lg:p-8">
@@ -81,20 +89,8 @@ export const Hero = () => {
       <div className=" relative z-10 flex flex-col justify-between min-h-[calc(100vh-100px)] px-6 lg:px-16 pb-12">
         {/* Main Headline */}
         <div className="flex-1 flex items-center">
-          <div className="max-w-4xl">
-            <div
-              className={`transition-all duration-1000 delay-300 ${
-                isLoaded
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-10"
-              }`}
-            >
-              <p className="text-white/80 text-lg lg:text-xl mb-6 font-light tracking-wide">
-                Strategic, bold,
-                <br />
-                and built to connect.
-              </p>
-            </div>
+          <div className="w-full">
+            
 
             <div className="space-y-2 overflow-hidden absolute bottom-10 left-10">
               <h1
@@ -123,7 +119,7 @@ export const Hero = () => {
                   lineHeight: "0.95",
                 }}
               >
-                I’m Nadun
+                I'm Nadun
               </h1>
               <h1
                 className={`text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white transition-all duration-1000 delay-900 ${
@@ -154,10 +150,9 @@ export const Hero = () => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <p className="text-white/70 text-base lg:text-lg mb-8 leading-relaxed max-w-xl ml-auto">
-              I help startups and creatives craft memorable brand identities
-              through thoughtful design, clear storytelling, and visual
-              consistency that stands out in any crowd.
+            <p className="text-white/50 text-base mb-8 leading-relaxed max-w-xl ml-auto text-xl text-right">
+              "Coding with purpose. Building with passion.
+              I turn ideas into working code fast and clean."
             </p>
 
             <div className="flex justify-end space-x-4">
