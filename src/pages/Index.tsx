@@ -10,8 +10,8 @@ import { Blog } from "@/components/sections/Blog";
 const Index = () => {
   return (
     <div className="relative">
-      {/* Fixed Navigation */}
-      <Navigation className="fixed top-8 right-8 z-50" />
+      {/* Fixed Navigation - Centered and larger */}
+      <Navigation className="fixed top-1/2 right-8 transform -translate-y-1/2 z-50 w-72" />
       
       {/* Main Content */}
       <main>
