@@ -73,7 +73,7 @@ export const Hero = () => {
 
             <div className="space-y-2 overflow-hidden absolute bottom-10 left-10">
               <h1
-                className={`text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white transition-all duration-1000 delay-500 ${
+                className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white transition-all duration-1000 delay-500 ${
                   isLoaded
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 -translate-x-20"
