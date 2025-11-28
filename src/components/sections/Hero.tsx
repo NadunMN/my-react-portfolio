@@ -1,9 +1,13 @@
 import { TypeAnimation } from "react-type-animation";
 import React, { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
+import TextPressure from '@/components/TextPressure';
 
-export const Hero = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+import { RetroGrid } from "@/components/ui/retro-grid";
+
+export function Hero() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -11,7 +15,12 @@ export const Hero = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-black">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl">
+      {/* <span className="pointer-events-none z-10 whitespace-pre-wrap bg-gradient-to-b from-[#ffd319] via-[#ff2975] to-[#8c1eff] bg-clip-text text-center text-7xl font-bold leading-none tracking-tighter text-transparent">
+        Retro Grid
+      </span> */}
+
+          <div className="relative min-h-screen w-full overflow-hidden bg-black">
      
 
       {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div> */}
@@ -66,12 +75,45 @@ export const Hero = () => {
 
       {/* Hero Content */}
       <div className=" relative z-10 flex flex-col justify-between min-h-[calc(100vh-100px)] px-6 lg:px-16 pb-12">
-        {/* Main Headline */}
-        <div className="flex-1 flex items-center">
-          <div className="w-full">
-            
 
-            <div className="space-y-2 overflow-hidden absolute bottom-10 left-10">
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <div className="flex bg p-4 rounded-lg justify-center items-center">
+            <h1 className="text-7xl font-bold">Software</h1>
+            <RotatingText
+              texts={['Coding', 'Innovating.', 'Creating', 'Building.']}
+              mainClassName="px-4 sm:px-6 md:px-8 text-white bg-red-600 overflow-hidden py-2 sm:py-3 md:py-4 justify-center rounded-lg text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold"
+              staggerFrom={"last"}
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-120%" }}
+              staggerDuration={0.025}
+              splitLevelClassName="overflow-hidden pb-1 sm:pb-2 md:pb-3"
+              transition={{ type: "spring", damping: 30, stiffness: 400 }}
+              rotationInterval={2000}
+            />
+          </div>
+        </div> */}
+
+        <div style={{position: 'relative', height: '650px'}}>
+          <TextPressure
+            text="Hello!"
+            flex={true}
+            alpha={false}
+            stroke={false}
+            width={true}
+            weight={true}
+            italic={true}
+            textColor="#ffffff"
+            strokeColor="#ff0000"
+            minFontSize={20}
+          />
+        </div>
+
+
+        {/* Main Headline */}
+        {/* <div className="flex-1 flex items-center justify-center">
+          <div className="w-full text-center">
+            <div className="space-y-2 overflow-hidden">
               <h1
                 className={`text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white transition-all duration-1000 delay-500 ${
                   isLoaded
@@ -112,11 +154,11 @@ export const Hero = () => {
                   lineHeight: "0.95",
                 }}
               >
-                {/* Coding Realm */}
+           
               </h1>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Content */}
         <div className="absolute bottom-10 right-10 flex flex-col lg:flex-row lg:items-end lg:justify-between ">
@@ -153,5 +195,8 @@ export const Hero = () => {
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-purple-500/10 to-transparent rounded-full blur-3xl"></div>
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/5 to-transparent rounded-full blur-3xl"></div>
     </div>
+
+      <RetroGrid />
+    </div>
   );
-};
+}
