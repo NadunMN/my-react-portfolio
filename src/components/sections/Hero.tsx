@@ -5,6 +5,7 @@ import TextPressure from '@/components/TextPressure';
 import DecryptedText from '@/components/DecryptedText';
 
 
+
 import { RetroGrid } from "@/components/ui/retro-grid";
 
 export function Hero() {
@@ -17,12 +18,12 @@ export function Hero() {
 
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl">
-
+              
           <div className="relative min-h-screen w-full overflow-hidden bg-black">
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 lg:px-16">
-        
+      
         {/* Main TextPressure Component */}
         <div className="flex items-center justify-center w-full max-w-7xl h-auto mb-12">
           <div style={{position: 'relative', height: '400px', width: '100%'}}>
