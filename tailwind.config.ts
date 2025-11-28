@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      // fontFamily: {
+      
+      // },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -52,6 +56,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+        poppins: ["Playwrite US Trad Guides", "cursive"],
+        Bungee: ["Bungee Spice", "sans-serif"],
+        dancingScript: ["Dancing Script", "cursive"],
       },
       borderRadius: {
         lg: "var(--radius)",
