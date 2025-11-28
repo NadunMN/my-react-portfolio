@@ -45,7 +45,7 @@ export function Hero() {
         {/* DecryptedText Components */}
         <div className="flex flex-col items-center space-y-6">
           <DecryptedText
-            text="Welcome to my portfolio"
+            text="Welcome to my 404"
             speed={50}
             maxIterations={30}
             characters="ABCD1234!@#$%^&*()"

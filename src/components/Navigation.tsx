@@ -83,7 +83,7 @@ export function Navigation() {
                         Nadun Madusanka
                       </div>
                       <p className="text-sm leading-tight text-muted-foreground">
-                        Full-stack developer passionate about creating innovative web solutions.
+                        Software Engineer passionate about creating innovative solutions.
                       </p>
                     </a>
                   </NavigationMenuLink>
