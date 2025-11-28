@@ -12,22 +12,7 @@ export const Hero = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          // backgroundImage: `url('/public/Images/ChatGPT Image Nov 19, 2025, 06_40_00 PM.png')`,
-        }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center z-0">
-        <div className="w-[500px] h-[500px] bg-white blur-[200px]"></div>
-      </div>
-      
-        <div className="absolute inset-0 w-full bg-gradient-to-r from-black via-black/80 to-transparent flex items-center justify-center z-10">
-          <img className="object-contain" src="/public/Images/ChatGPT Image Nov 19, 2025, 06_40_00 PM.png" alt="" />
-        </div>
-
-      </div>
+     
 
       {/* <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div> */}
       
@@ -43,13 +28,7 @@ export const Hero = () => {
             <span className="text-white font-bold text-lg tracking-tight">
               Nadun Madusanka
             </span>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white/80 hover:text-white transition-colors flex items-center space-x-2"
-            >
-              <span className="text-sm">Menu</span>
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+             
           </div>
         </div>
       </nav>
