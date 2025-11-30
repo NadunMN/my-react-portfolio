@@ -12,7 +12,6 @@ const Index = () => {
     <div className="relative">
       {/* Fixed Navigation - Centered and larger */}
       <Navigation />
-      
       {/* Main Content */}
       <main>
         <Hero />
