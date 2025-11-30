@@ -1,10 +1,9 @@
 {
   "name": "vite_react_shadcn_ts",
-  "homepage": "http://iamnadun.me/my-react-portfolio/",
+  "homepage": "https://iamnadun.me/my-react-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -61,9 +60,9 @@
     "motion": "^12.23.24",
     "next-themes": "^0.3.0",
     "ogl": "^1.0.11",
-    "react": "^18.3.1",
+    "react": "^19.2.0",
     "react-day-picker": "^8.10.1",
-    "react-dom": "^18.3.1",
+    "react-dom": "^19.2.0",
     "react-hook-form": "^7.61.1",
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
