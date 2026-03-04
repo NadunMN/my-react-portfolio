@@ -42,33 +42,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* DecryptedText Components */}
-        <div className="flex flex-col items-center space-y-6">
-          <DecryptedText
-            text=""
-            speed={50}
-            maxIterations={30}
-            characters="ABCD1234!@#$%^&*()"
-            className="text-white text-3xl md:text-4xl lg:text-5xl font-light tracking-wide font-dancingScript"
-            parentClassName="text-center"
-            encryptedClassName="text-white/50"
-            animateOn="view"
-            revealDirection="start"
-            sequential={true}
-          />
-          <DecryptedText
-            text="I'm Nadun Madusanka."
-            speed={50}
-            maxIterations={30}
-            characters="ABCD1234!@#$%^&*()"
-            className="text-white text-3xl md:text-4xl lg:text-5xl font-light tracking-wide font-dancingScript"
-            parentClassName="text-center"
-            encryptedClassName="text-white/50"
-            animateOn="view"
-            revealDirection="start"
-            sequential={true}
-          />
-        </div>
+        
 
       </div>
 

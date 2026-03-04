@@ -40,7 +40,9 @@ export const About = () => {
           <div className="space-y-8">
             <div className="space-y-6">
               <p className="text-xl text-white/80 leading-relaxed">
-                I'm a passionate developer who loves creating innovative solutions and bringing ideas to life through code.
+                I am a passionate Computer Science undergraduate with a strong interest in backend development, system design, 
+                and networking technologies. I enjoy building reliable and scalable applications using technologies such as 
+                Java, PostgreSQL, and modern web frameworks while following structured architectures like MVC.
               </p>
               <p className="text-xl text-white/80 leading-relaxed">
                 With expertise in modern web technologies, I focus on building user-friendly, performant, and scalable applications.
