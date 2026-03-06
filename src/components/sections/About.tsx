@@ -11,7 +11,7 @@ export const About = () => {
           {/* Content Section */}
           <div className="">
             <div className="">
-              <p className="text-6xl text-justify text-white/80 indent-20">
+              <p className="text-6xl text-justify text-white/80 indent-16 tracking-tight">
                 Computer Science undergraduate passionate about backend development, system design, and networking, with experience in Java, PostgreSQL, and MVC architecture <sup className="text-red-500 text-2xl">ⓡ</sup>.
               </p>
               {/* <p className="text-xl text-white/80 leading-relaxed">

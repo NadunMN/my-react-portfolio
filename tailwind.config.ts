@@ -60,6 +60,7 @@ export default {
         Bungee: ["Bungee Spice", "sans-serif"],
         dancingScript: ["Dancing Script", "cursive"],
         'bebas-neue': ['Bebas Neue', 'cursive'],
+        'dancing-script': ['Dancing Script', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",
