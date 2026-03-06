@@ -59,6 +59,7 @@ export default {
         poppins: ["Playwrite US Trad Guides", "cursive"],
         Bungee: ["Bungee Spice", "sans-serif"],
         dancingScript: ["Dancing Script", "cursive"],
+        'bebas-neue': ['Bebas Neue', 'cursive'],
       },
       borderRadius: {
         lg: "var(--radius)",

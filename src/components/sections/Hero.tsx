@@ -1,15 +1,14 @@
-import { TypeAnimation } from "react-type-animation";
 import React, { useState, useEffect } from "react";
-import { Menu, X, ArrowRight, ChevronDown } from "lucide-react";
-import TextPressure from '@/components/TextPressure';
-import DecryptedText from '@/components/DecryptedText';
-
+import ClickSpark from '@/components/ClickSpark';
 
 
 export function Hero() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [opacity, setOpacity] = useState(1);
+  const [gifIndex, setGifIndex] = useState(0);
+
+  const handleShift = () => setGifIndex((prev) => (prev + 1) % 3);
 
   useEffect(() => {
     setIsLoaded(true);
@@ -44,33 +43,85 @@ export function Hero() {
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 lg:px-16">
 
-          <div className="absolute top-0 left-0 z-20 pt-6 pl-6">
+        <div className="absolute top-0 left-0 z-20 pt-6 pl-6 cursor-pointer" onClick={handleShift}>
+          <ClickSpark
+            sparkColor='#fff'
+            sparkSize={10}
+            sparkRadius={15}
+            sparkCount={8}
+            duration={400}
+          >
             <p className="text-gray-400">mood isn't fixed</p>
-            <p className="text-white">go through my portfolio.</p>
-          </div>
+            <p className="text-white">click here to shift it.</p>
+          </ClickSpark>
+        </div>
+
+
       
         {/* Main TextPressure Component */}
-        <div className="flex-col items-center justify-center w-full max-w-7xl h-auto mb-12">
-          <div style={{position: 'relative', height: '400px', width: '100%'}}>
-            <TextPressure
-              text="Hello!"
-              flex={true}
-              alpha={false}
-              stroke={false}
-              width={true}
-              weight={true}
-              italic={true}
-              textColor="#ffffff"
-              strokeColor="#ff0000"
-              minFontSize={20}
-            />
+        <div className="flex flex-col items-center justify-center w-full h-auto">
+
+          <div className="relative w-full overflow-hidden">
+            {/* GIF at center top over the letters */}
+            <div
+              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              style={{
+                left: '50%',
+                transform: 'translateX(-50%)',
+                top: '0vw',
+                width: 'clamp(18rem, 28vw, 36rem)',
+                height: 'clamp(10rem, 18vw, 26rem)',
+                opacity: gifIndex === 0 ? 1 : 0,
+              }}
+            >
+              <img
+                src="https://framerusercontent.com/images/4v6kumukPZJjsiCnGvFa6QEH54.gif?scale-down-to=512&width=2360&height=1640"
+                alt=""
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            {/* GIF at bottom-right of last N */}
+            <div
+              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              style={{
+                right: '-2vw',
+                bottom: '10vw',
+                width: 'clamp(20rem, 25vw, 30rem)',
+                height: 'clamp(12rem, 17.5vw, 22rem)',
+                opacity: gifIndex === 1 ? 1 : 0,
+              }}
+            >
+              <img
+                src="https://framerusercontent.com/images/2Y2aRWruDx5l9007pv7J6AZ0E.gif?width=2360&height=1640"
+                alt=""
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            {/* GIF at bottom-left of first N */}
+            <div
+              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              style={{
+                left: '-2vw',
+                bottom: '10vw',
+                width: 'clamp(20rem, 25vw, 30rem)',
+                height: 'clamp(12rem, 17.5vw, 22rem)',
+                opacity: gifIndex === 2 ? 1 : 0,
+              }}
+            >
+              <img
+                src="https://framerusercontent.com/images/sprKM5aTL8Wo6PRLFdeslRBYY.gif?scale-down-to=1024&width=4096&height=1714"
+                alt=""
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+
+            <p className="font-bebas-neue text-bold text-white w-full text-center" style={{ fontSize: 'clamp(5rem, 35vw, 60rem)' }}>NADUN</p>
           </div>
 
-          <div >
-            <p className="text-2xl text-white px-4 py-2">NADUN,  MADUSANKA</p>
-          </div>
-          
-          
+          {/* <p className="text-2xl text-white tracking-widest text-center">NADUN, MADUSANKA</p> */}
+
         </div>
 
         
