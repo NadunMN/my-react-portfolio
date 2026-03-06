@@ -1,65 +1,58 @@
-import Folder from '@/components/Folder'
+import React, { useEffect, useState } from "react";
 
 export const About = () => {
-  // Sample portfolio items for the folder
-  const portfolioItems = [
-    {
-      id: '1',
-      title: 'React Portfolio',
-      image: '/public/Images/WhatsApp Image 2025-11-19 at 00.19.37_c357a189.jpg', // Add your image paths
-      description: 'A modern React portfolio showcasing my development skills and projects.'
-    },
-    {
-      id: '2',
-      title: 'E-commerce App',
-      image: '/public/Images/2022_05_26_21_02_IMG_1786.JPG', // Add your image paths
-      description: 'Full-stack e-commerce application built with React and Node.js.'
-    },
-    {
-      id: '3',
-      title: 'Dashboard UI',
-      image: '/public/Images/3982ace2-1d80-4614-8572-dbeb09511827.png', // Add your image paths
-      description: 'Interactive dashboard with data visualization and analytics.'
-    }
-  ];
 
   return (
     <section id="about" className="min-h-screen py-20 flex items-center bg-background">
       <div className="container mx-auto px-6 flex flex-col justify-center">
-        {/* Header */}
-        <div className="text-left">
-          <h2 className="text-6xl font-black mb-4 bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600"></div>
-        </div>
 
         {/* Main Content Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="items-center">
           {/* Content Section */}
-          <div className="space-y-8">
-            <div className="space-y-6">
-              <p className="text-xl text-white/80 leading-relaxed">
-                I am a passionate Computer Science undergraduate with a strong interest in backend development, system design, 
-                and networking technologies. I enjoy building reliable and scalable applications using technologies such as 
-                Java, PostgreSQL, and modern web frameworks while following structured architectures like MVC.
+          <div className="">
+            <div className="">
+              <p className="text-6xl text-justify text-white/80 indent-20">
+                Computer Science undergraduate passionate about backend development, system design, and networking, with experience in Java, PostgreSQL, and MVC architecture <sup className="text-red-500 text-2xl">ⓡ</sup>.
               </p>
-              <p className="text-xl text-white/80 leading-relaxed">
-                With expertise in modern web technologies, I focus on building user-friendly, performant, and scalable applications.
+              {/* <p className="text-xl text-white/80 leading-relaxed">
+                Beyond technology, I enjoy hiking and exploring nature, which helps me maintain a balanced lifestyle 
+                and brings a sense of adventure and curiosity that also influences how I approach problem-solving in technology.
+              </p> */}
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-12 mt-16">
+            {/* Left: Image */}
+            <div className="flex-shrink-0 w-full md:w-1/2">
+              <img
+                src="/Images/WhatsApp Image 2025-11-19 at 00.37.36_1f373920.jpg"
+                alt="Nadun Madusanka"
+                className="w-full h-[400px] object-cover rounded-2xl"
+              />
+            </div>
+
+            {/* Right: Text */}
+            <div className="w-full md:w-1/2">
+              <p className="text-xl text-justify text-white/80 leading-relaxed">
+                I'm <span className="text-red-500">Nadun</span>. Beyond technology, I enjoy hiking and exploring nature,
+                which helps me maintain a balanced lifestyle and brings a sense of adventure and curiosity
+                that also influences how I approach problem-solving in technology.
               </p>
+
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300 rounded-sm"
+              >
+                View Resume
+              </a>
+
             </div>
           </div>
 
 
- {/* Visual Section */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-md h-96 flex items-center justify-center">
-              <div className="absolute inset-0  rounded-7xl blur-3xl"></div>
-              <div className="relative bg-black/20 backdrop-blur-2xl rounded-xl p-8 w-full h-full flex items-center justify-center">
-                <Folder size={3} color="#5227FF" items={portfolioItems} className="custom-folder" />
-              </div>
-            </div>
-          </div>
+
           
         </div>
       </div>

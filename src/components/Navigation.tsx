@@ -65,10 +65,11 @@ const portfolioSections: { title: string; href: string; description: string }[] 
 export function Navigation() {
   return (
     <div className="fixed top-6 right-6 z-50">
+      <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg shadow-black/20 px-2 py-1">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="backdrop-blur-md text-white hover:bg-white/20 px-6 py-3 text-base font-medium h-auto">
+            <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/15 hover:rounded-xl focus:bg-white/15 data-[state=open]:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none">
               Portfolio
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -76,13 +77,13 @@ export function Navigation() {
                 <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                      className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-white/5 border border-white/15 backdrop-blur-sm p-6 no-underline outline-none hover:bg-white/10 transition-colors duration-200 focus:shadow-md"
                       href="#hero"
                     >
-                      <div className="mb-2 mt-4 text-lg font-medium">
+                      <div className="mb-2 mt-4 text-lg font-semibold text-white">
                         Nadun Madusanka
                       </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
+                      <p className="text-sm leading-tight text-white/60">
                         Software Engineer passionate about creating innovative solutions.
                       </p>
                     </a>
@@ -101,11 +102,11 @@ export function Navigation() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="backdrop-blur-md text-white  hover:bg-white/20 px-6 py-3 text-base font-medium h-auto">
+            <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/15 hover:rounded-xl  focus:bg-white/15 data-[state=open]:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none">
               Sections
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {portfolioSections.map((section) => (
                   <ListItem
                     key={section.title}
@@ -120,13 +121,14 @@ export function Navigation() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <Link href="#contact" legacyBehavior passHref>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "backdrop-blur-md text-white  hover:bg-white/20 px-6 py-3 text-base font-medium h-auto bg-transparent")}>
+              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-white hover:bg-white/15 hover:rounded-xl focus:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none")}>
                 Contact
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+      </div>
     </div>
   )
 }
@@ -141,7 +143,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white",
+            "block select-none space-y-1 rounded-xl border border-transparent p-3 leading-none no-underline outline-none transition-all duration-200 hover:bg-white/10 hover:border-white/15 hover:text-white focus:bg-white/10 focus:text-white",
             className
           )}
           {...props}
