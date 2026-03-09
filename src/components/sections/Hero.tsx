@@ -125,7 +125,7 @@ export function Hero() {
           {/* Social Media Buttons */}
           <div className="flex items-center justify-center gap-4 absolute bottom-20 z-20">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:nadunmaddepola@gmail.com"
               className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
               aria-label="Email"
             >
@@ -153,7 +153,7 @@ export function Hero() {
             </a>
 
             <a
-              href="https://instagram.com/yourusername"
+              href="https://www.instagram.com/nadu_nm/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"

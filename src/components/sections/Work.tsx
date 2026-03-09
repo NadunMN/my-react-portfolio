@@ -7,21 +7,21 @@ const projects = [
     title: "brainMap",
     description: "A low-code platform that helps you build, deploy, and manage enterprise-grade apps while accelerating development time.",
     tech: ["Branding", "Web Design", "Design System", "Marketing"],
-    image: "/Images/new.jpg",
+    image: "/Images/4.jpeg",
     link: "#",
   },
   {
     title: "KottuLabs",
-    description: "Full-stack solution for enterprise clients with robust authentication, real-time collaboration features, and advanced analytics.",
-    tech: ["Node.js", "PostgreSQL", "React", "Docker"],
-    image: "/Images/wb2I6wF-limbo-wallpaper.jpg",
+    description: "Kottu Labs, a comprehensive web-based restaurant management system built using PHP (MVC) and MySQL. Designed to support multi-branch operations, it streamlines restaurant workflows for both customers and staff.",
+    tech: ["PHP", "SQL", "JavaScript", "Docker"],
+    image: "/Images/kottulabs.jpeg",
     link: "#",
   },
   {
     title: "Private VPN",
-    description: "Mobile-first progressive web app with offline support, push notifications, and lightning-fast performance across all devices.",
-    tech: ["PWA", "React", "Firebase", "Workbox"],
-    image: "/Images/new.jpg",
+    description: "own VPN using WireGuard on a DigitalOcean Ubuntu 22.04 Droplet  Configured firewall rules, secured SSH access, generated client keys, and verified encrypted tunneling with live handshake monitoring.",
+    tech: ["CyberSecurity", "Networking", "WireGuard", "DigitalOcean"],
+    image: "/Images/wireguard-vpn-docker.jpg",
     link: "#",
   },
 ];
@@ -142,11 +142,11 @@ export const Work = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover"
                   />
                   
                   {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-red-500/0 group-hover:bg-red-500/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-red-500/0 transition-colors duration-500" />
                 </div>
               </motion.div>
             </motion.div>
