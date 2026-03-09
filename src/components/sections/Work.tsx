@@ -146,7 +146,7 @@ export const Work = () => {
                   />
                   
                   {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-red-500/0 group-hover:bg-red-500/10 transition-colors duration-500" />
                 </div>
               </motion.div>
             </motion.div>
@@ -192,10 +192,10 @@ export const Work = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.4, delay: 0.4 }}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-accent text-accent-foreground rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-accent/20"
+            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-red-500 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-red-500/20"
           >
             {/* Button background animation */}
-            <span className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80 transition-transform duration-300 group-hover:scale-105" />
+            <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transition-transform duration-300 group-hover:scale-105" />
             
             {/* Button content */}
             <span className="relative z-10">View All Projects</span>
@@ -210,9 +210,9 @@ export const Work = () => {
             transition={{ duration: 1, delay: 0.6 }}
             className="mt-12 flex items-center gap-4"
           >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-accent/30" />
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-red-500/30" />
             <span className="text-xs text-muted-foreground tracking-widest uppercase">More Projects</span>
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-accent/30" />
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-red-500/30" />
           </motion.div>
         </motion.div>
       </div>
