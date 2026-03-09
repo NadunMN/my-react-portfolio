@@ -61,6 +61,8 @@ export default {
         dancingScript: ["Dancing Script", "cursive"],
         'bebas-neue': ['Bebas Neue', 'cursive'],
         'dancing-script': ['Dancing Script', 'cursive'],
+        abel: ['Abel', 'sans-serif'],
+
       },
       borderRadius: {
         lg: "var(--radius)",

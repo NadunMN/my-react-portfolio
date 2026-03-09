@@ -66,11 +66,11 @@ export function Hero() {
             <div
               className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
               style={{
-                left: '50%',
-                transform: 'translateX(-50%)',
-                top: '0vw',
-                width: 'clamp(18rem, 28vw, 36rem)',
-                height: 'clamp(10rem, 18vw, 26rem)',
+                right: '15vw',
+                // transform: 'translateX(-50%)',
+                top: '0.5vw',
+                width: 'clamp(10rem, 18vw, 30rem)',
+                height: 'clamp(10rem, 15vw, 26rem)',
                 opacity: gifIndex === 0 ? 1 : 0,
               }}
             >
@@ -85,8 +85,8 @@ export function Hero() {
             <div
               className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
               style={{
-                right: '-2vw',
-                bottom: '10vw',
+                right: '5vw',
+                bottom: '5vw',
                 width: 'clamp(20rem, 25vw, 30rem)',
                 height: 'clamp(12rem, 17.5vw, 22rem)',
                 opacity: gifIndex === 1 ? 1 : 0,
@@ -103,8 +103,8 @@ export function Hero() {
             <div
               className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
               style={{
-                left: '-2vw',
-                bottom: '10vw',
+                left: '2vw',
+                bottom: '5vw',
                 width: 'clamp(20rem, 25vw, 30rem)',
                 height: 'clamp(12rem, 17.5vw, 22rem)',
                 opacity: gifIndex === 2 ? 1 : 0,
@@ -117,7 +117,7 @@ export function Hero() {
               />
             </div>
 
-            <p className="font-bebas-neue text-bold text-white w-full text-center" style={{ fontSize: 'clamp(5rem, 35vw, 60rem)' }}>NADUN</p>
+            <p className="font-bebas-neue text-bold text-white w-full text-center" style={{ fontSize: 'clamp(5rem, 30vw, 60rem)' }}>NADUN</p>
           </div>
 
           {/* <p className="text-2xl text-white tracking-widest text-center">NADUN, MADUSANKA</p> */}
