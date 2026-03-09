@@ -43,9 +43,6 @@ export const Blog = () => {
           <h2 className="font-bebas-neue text-7xl md:text-8xl lg:text-9xl font-black mb-4">
             Blog
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl">
-            Thoughts, insights, and tutorials on web development, design, and technology
-          </p>
         </motion.div>
 
         {/* Blog Grid */}

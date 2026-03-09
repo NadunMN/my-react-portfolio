@@ -24,7 +24,7 @@ export const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="font-bebas-neue text-7xl md:text-8xl lg:text-9xl font-black mb-20 text-center"
+          className="font-bebas-neue text-7xl md:text-8xl lg:text-9xl font-black mb-20 text-left"
         >
           Experience
         </motion.h2>

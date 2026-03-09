@@ -133,7 +133,7 @@ export function Hero() {
             </a>
 
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/NadunMN"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
@@ -143,7 +143,7 @@ export function Hero() {
             </a>
 
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/nadun-madusanka-mn"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"

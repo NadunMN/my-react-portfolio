@@ -38,7 +38,7 @@ export const Work = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="font-bebas-neue font-black mb-24 text-center"
+          className="font-bebas-neue font-black mb-24 text-left"
           style={{ fontSize: 'clamp(2rem, 8vw, 20rem)' }}
         >
           My Recent Works
