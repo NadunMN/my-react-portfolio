@@ -101,7 +101,7 @@ export const Work = () => {
                   {project.tech.map((tech, tIdx) => (
                     <span
                       key={tech}
-                      className="px-4 py-2 bg-muted/50 rounded-md text-foreground/70 hover:text-foreground hover:bg-muted transition-all duration-300 cursor-default"
+                      className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-md text-red-500 hover:bg-red-500/20 transition-all duration-300 cursor-default"
                     >
                       #{tech}
                     </span>
