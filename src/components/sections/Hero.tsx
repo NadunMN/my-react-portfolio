@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ClickSpark from '@/components/ClickSpark';
+import { FiMail, FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
+import { SiDiscord } from "react-icons/si";
 
 
 export function Hero() {
@@ -118,6 +120,57 @@ export function Hero() {
             </div>
 
             <p className="font-bebas-neue text-bold text-white w-full text-center" style={{ fontSize: 'clamp(5rem, 30vw, 60rem)' }}>NADUN</p>
+          </div>
+
+          {/* Social Media Buttons */}
+          <div className="flex items-center justify-center gap-4 absolute bottom-20 z-20">
+            <a
+              href="mailto:your.email@example.com"
+              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              aria-label="Email"
+            >
+              <FiMail className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+            </a>
+
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              aria-label="GitHub"
+            >
+              <FiGithub className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+            </a>
+
+            <a
+              href="https://linkedin.com/in/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              aria-label="LinkedIn"
+            >
+              <FiLinkedin className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+            </a>
+
+            <a
+              href="https://instagram.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              aria-label="Instagram"
+            >
+              <FiInstagram className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+            </a>
+
+            <a
+              href="https://discord.com/users/youruserid"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              aria-label="Discord"
+            >
+              <SiDiscord className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+            </a>
           </div>
 
           {/* <p className="text-2xl text-white tracking-widest text-center">NADUN, MADUSANKA</p> */}
