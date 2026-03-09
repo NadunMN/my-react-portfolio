@@ -153,68 +153,23 @@ export const Work = () => {
           ))}
         </div>
 
-        {/* View All Projects Section */}
+        {/* View All Blog Posts Link */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="mt-32 flex flex-col items-center justify-center py-20 border-t border-border/30"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 text-center"
         >
-          {/* Title */}
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-bebas-neue text-4xl md:text-5xl font-black mb-4 text-center"
-          >
-            Want to see more?
-          </motion.h3>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-muted-foreground text-center max-w-md mb-10"
-          >
-            Explore my complete portfolio of projects, case studies, and creative work
-          </motion.p>
-
-          {/* Button */}
-          <motion.a
+          <a
             href="#"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-red-500 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-red-500/20"
+            className="inline-flex items-center gap-2 text-red-500 hover:text-red-500/80 font-medium transition-colors duration-300 group"
           >
-            {/* Button background animation */}
-            <span className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 transition-transform duration-300 group-hover:scale-105" />
-            
-            {/* Button content */}
-            <span className="relative z-10">View All Projects</span>
-            <FiArrowUpRight className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </motion.a>
-
-          {/* Decorative elements */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="mt-12 flex items-center gap-4"
-          >
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-red-500/30" />
-            <span className="text-xs text-muted-foreground tracking-widest uppercase">More Projects</span>
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-red-500/30" />
-          </motion.div>
+            <span className="text-lg">View All Works</span>
+            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
         </motion.div>
+
       </div>
     </section>
   );

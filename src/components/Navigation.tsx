@@ -46,16 +46,6 @@ const portfolioSections: { title: string; href: string; description: string }[] 
     description: "Discover my professional background and career milestones.",
   },
   {
-    title: "Skills",
-    href: "#skills",
-    description: "View my technical skills and expertise in various technologies.",
-  },
-  {
-    title: "Contact",
-    href: "#contact",
-    description: "Get in touch for collaborations or opportunities.",
-  },
-  {
     title: "Blog",
     href: "#blog",
     description: "Read my thoughts on technology, development, and industry trends.",
