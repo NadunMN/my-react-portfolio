@@ -31,18 +31,19 @@ export const Work = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="work" className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
-        <motion.h2
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="font-bebas-neue font-black mb-24 text-left"
-          style={{ fontSize: 'clamp(2rem, 8vw, 20rem)' }}
-        >
-          My Recent Works
-        </motion.h2>
+    <section id="work" className="min-h-screen py-24 bg-background relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Label */}
+        <div className="flex items-center gap-4 mb-16">
+          <span className="text-red-500 font-mono text-sm tracking-widest uppercase">03</span>
+          <div className="h-px w-16 bg-red-500/50" />
+          <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Projects</span>
+        </div>
+
+        
 
         <div ref={sectionRef} className="space-y-32">
           {projects.map((project, index) => (
@@ -59,6 +60,11 @@ export const Work = () => {
             >
               {/* Left Side - Content */}
               <div className="space-y-8">
+                {/* Project Number */}
+                <span className="text-red-500/40 font-mono text-sm tracking-widest">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
                 {/* Title */}
                 <motion.h3
                   initial={{ opacity: 0, x: -30 }}
@@ -68,7 +74,7 @@ export const Work = () => {
                     delay: index * 0.2 + 0.2,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="font-abel text-6xl font-black tracking-tight leading-none"
+                  className="font-abel text-6xl font-black tracking-tight leading-none text-white/90"
                 >
                   {project.title}
                 </motion.h3>
@@ -82,7 +88,7 @@ export const Work = () => {
                     delay: index * 0.2 + 0.3,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="text-muted-foreground text-lg leading-relaxed max-w-xl"
+                  className="text-white/50 text-lg leading-relaxed max-w-xl"
                 >
                   {project.description}
                 </motion.p>
@@ -98,12 +104,12 @@ export const Work = () => {
                   }}
                   className="flex flex-wrap gap-3"
                 >
-                  {project.tech.map((tech, tIdx) => (
+                  {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-2 bg-red-500/10 border border-red-500/20 rounded-md text-red-500 hover:bg-red-500/20 transition-all duration-300 cursor-default"
+                      className="px-4 py-1.5 text-xs font-mono tracking-wider uppercase border border-white/10 text-white/60 rounded-full hover:border-red-500/50 hover:text-red-400 transition-all duration-300 cursor-default"
                     >
-                      #{tech}
+                      {tech}
                     </span>
                   ))}
                 </motion.div>
@@ -120,9 +126,9 @@ export const Work = () => {
                     stiffness: 200,
                     damping: 15,
                   }}
-                  className="group inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-foreground/20 hover:border-foreground hover:bg-foreground transition-all duration-300"
+                  className="group inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-white/10 hover:border-red-500 hover:bg-red-500/10 transition-all duration-300"
                 >
-                  <FiArrowUpRight className="w-7 h-7 text-foreground group-hover:text-background transition-colors duration-300 group-hover:rotate-45 transform transition-transform" />
+                  <FiArrowUpRight className="w-7 h-7 text-white/60 group-hover:text-red-500 transition-all duration-300 group-hover:rotate-45" />
                 </motion.a>
               </div>
 
@@ -137,39 +143,43 @@ export const Work = () => {
                 }}
                 className="relative group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-lg aspect-[16/9]">
+                <div className="relative overflow-hidden rounded-2xl">
                   {/* Image */}
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-105"
                   />
                   
-                  {/* Subtle overlay on hover */}
-                  <div className="absolute inset-0 bg-red-500/0 transition-colors duration-500" />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {/* Red accent border on hover */}
+                  <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30 transition-colors duration-500" />
                 </div>
               </motion.div>
             </motion.div>
           ))}
         </div>
 
-        {/* View All Blog Posts Link */}
+        {/* Divider */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
+
+        {/* View All Works Link */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="text-center"
         >
           <a
             href="#"
-            className="inline-flex items-center gap-2 text-red-500 hover:text-red-500/80 font-medium transition-colors duration-300 group"
+            className="group/btn inline-flex items-center gap-3 px-8 py-3.5 border border-red-500/50 text-red-400 text-sm font-mono tracking-widest uppercase rounded-sm hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
           >
-            <span className="text-lg">View All Works</span>
-            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            View All Works
+            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
           </a>
         </motion.div>
-
       </div>
     </section>
   );

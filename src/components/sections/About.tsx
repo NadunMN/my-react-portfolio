@@ -1,59 +1,106 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 export const About = () => {
+  const highlights = [
+    "Backend Development",
+    "System Design",
+    "Networking",
+    "Java",
+    "PostgreSQL",
+    "MVC Architecture",
+  ];
 
   return (
-    <section id="about" className="min-h-screen py-20 flex items-center bg-background">
-      <div className="container mx-auto px-6 flex flex-col justify-center">
+    <section id="about" className="min-h-screen py-24 flex items-center bg-background relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-        {/* Main Content Layout */}
-        <div className="items-center">
-          {/* Content Section */}
-          <div className="">
-            <div className="">
-              <p className="text-6xl text-justify text-white/80 indent-16 tracking-tight">
-                Computer Science undergraduate passionate about backend development, system design, and networking, with experience in Java, PostgreSQL, and MVC architecture <sup className="text-red-500 text-2xl">ⓡ</sup>.
-              </p>
-              {/* <p className="text-xl text-white/80 leading-relaxed">
-                Beyond technology, I enjoy hiking and exploring nature, which helps me maintain a balanced lifestyle 
-                and brings a sense of adventure and curiosity that also influences how I approach problem-solving in technology.
-              </p> */}
-            </div>
-          </div>
+      <div className="container mx-auto px-6 flex flex-col justify-center relative z-10">
 
-          <div className="flex flex-col md:flex-row items-center gap-12 mt-16">
-            {/* Left: Image */}
-            <div className="flex-shrink-0 w-full md:w-1/2">
+        {/* Section Label */}
+        <div className="flex items-center gap-4 mb-16">
+          <span className="text-red-500 font-mono text-sm tracking-widest uppercase">01</span>
+          <div className="h-px w-16 bg-red-500/50" />
+          <span className="text-white/50 font-mono text-sm tracking-widest uppercase">About Me</span>
+        </div>
+
+        {/* Hero Statement */}
+        <div className="max-w-5xl">
+          <p className="text-4xl md:text-5xl lg:text-6xl font-light text-white/90 leading-[1.15] tracking-tight">
+            Computer Science undergraduate passionate about{" "}
+            <span className="text-red-500 font-normal">backend development</span>,{" "}
+            <span className="text-red-500 font-normal">system design</span>, and{" "}
+            <span className="text-red-500 font-normal">networking</span>.
+          </p>
+        </div>
+
+        {/* Skill Tags */}
+        <div className="flex flex-wrap gap-3 mt-10">
+          {highlights.map((item) => (
+            <span
+              key={item}
+              className="px-4 py-1.5 text-xs font-mono tracking-wider uppercase border border-white/10 text-white/60 rounded-full hover:border-red-500/50 hover:text-red-400 transition-all duration-300 cursor-default"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
+
+        {/* Content Row */}
+        <div className="flex flex-col lg:flex-row items-stretch gap-10">
+          {/* Left: Image */}
+          <div className="w-full lg:w-1/2 group">
+            <div className="relative overflow-hidden rounded-2xl">
               <img
                 src="/Images/WhatsApp Image 2025-11-19 at 00.37.36_1f373920.jpg"
                 alt="Nadun Madusanka"
-                className="w-full h-[400px] object-cover rounded-2xl"
+                className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
-            </div>
-
-            {/* Right: Text */}
-            <div className="w-full md:w-1/2">
-              <p className="text-xl text-justify text-white/80 leading-relaxed">
-                I'm <span className="text-red-500">Nadun</span>. Beyond technology, I enjoy hiking and exploring nature,
-                which helps me maintain a balanced lifestyle and brings a sense of adventure and curiosity
-                that also influences how I approach problem-solving in technology.
-              </p>
-
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-8 px-6 py-3 border border-white/30 text-white text-sm tracking-widest uppercase hover:bg-white hover:text-black transition-colors duration-300 rounded-sm"
-              >
-                View Resume
-              </a>
-
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              {/* Red accent border on hover */}
+              <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30 transition-colors duration-500" />
             </div>
           </div>
 
+          {/* Right: Text & CTA */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center">
+            <h3 className="text-2xl font-light text-white mb-6">
+              I'm <span className="text-red-500 font-semibold">Nadun</span>.
+            </h3>
+            <p className="text-lg text-white/60 leading-relaxed mb-4">
+              Beyond technology, I enjoy hiking and exploring nature,
+              which helps me maintain a balanced lifestyle and brings a sense
+              of adventure and curiosity.
+            </p>
+            <p className="text-lg text-white/60 leading-relaxed mb-10">
+              That spirit of exploration also shapes how I approach
+              problem-solving in technology — always seeking new
+              perspectives and creative solutions.
+            </p>
 
-
-          
+            {/* CTA Button */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn inline-flex items-center gap-3 w-fit px-8 py-3.5 border border-red-500/50 text-red-400 text-sm font-mono tracking-widest uppercase rounded-sm hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
+            >
+              View Resume
+              <svg
+                className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

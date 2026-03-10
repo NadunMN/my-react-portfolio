@@ -30,20 +30,19 @@ const blogPosts = [
 
 export const Blog = () => {
   return (
-    <section id="blog" className="min-h-screen flex items-center justify-center py-20">
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
-          className="mb-20"
-        >
-          <h2 className="font-bebas-neue text-7xl md:text-8xl lg:text-9xl font-black mb-4">
-            Blog
-          </h2>
-        </motion.div>
+    <section id="blog" className="min-h-screen flex items-center justify-center py-24 bg-background relative overflow-hidden">
+      {/* Subtle background glow */}
+      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Label */}
+        <div className="flex items-center gap-4 mb-16">
+          <span className="text-red-500 font-mono text-sm tracking-widest uppercase">04</span>
+          <div className="h-px w-16 bg-red-500/50" />
+          <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Blog</span>
+        </div>
+
+       
 
         {/* Blog Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -59,12 +58,12 @@ export const Blog = () => {
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               }}
               whileHover={{ y: -8 }}
-              className="group relative bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden hover:border-red-500/50 transition-all duration-300 hover:shadow-[0_0_30px_-5px] hover:shadow-red-500/20 cursor-pointer"
+              className="group relative bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:shadow-[0_0_40px_-10px] hover:shadow-red-500/15 cursor-pointer"
             >
               <a href={post.link} className="block">
                 {/* Category badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <span className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-500 text-xs font-mono tracking-wider">
+                  <span className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-mono tracking-wider">
                     {post.category}
                   </span>
                 </div>
@@ -72,7 +71,7 @@ export const Blog = () => {
                 {/* Card Content */}
                 <div className="p-6 space-y-4">
                   {/* Date and Read Time */}
-                  <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-4 text-sm text-white/30">
                     <div className="flex items-center gap-1.5">
                       <FiCalendar className="w-4 h-4" />
                       <time>{post.date}</time>
@@ -84,30 +83,33 @@ export const Blog = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold tracking-tight group-hover:text-red-500 transition-colors duration-300 line-clamp-2">
+                  <h3 className="text-2xl font-bold tracking-tight text-white/90 group-hover:text-red-500 transition-colors duration-300 line-clamp-2">
                     {post.title}
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="text-muted-foreground leading-relaxed line-clamp-3">
+                  <p className="text-white/50 leading-relaxed line-clamp-3">
                     {post.excerpt}
                   </p>
 
                   {/* Read More Link */}
-                  <div className="flex items-center gap-2 text-red-500 font-medium pt-2">
+                  <div className="flex items-center gap-2 text-red-500 font-mono text-sm tracking-wider pt-2">
                     <span className="transition-transform duration-300 group-hover:translate-x-1">
                       Read Article
                     </span>
-                    <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </div>
                 </div>
 
                 {/* Bottom gradient accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </a>
             </motion.article>
           ))}
         </div>
+
+        {/* Divider */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
 
         {/* View All Blog Posts Link */}
         <motion.div
@@ -115,14 +117,14 @@ export const Blog = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 text-center"
+          className="text-center"
         >
           <a
             href="#"
-            className="inline-flex items-center gap-2 text-red-500 hover:text-red-500/80 font-medium transition-colors duration-300 group"
+            className="group/btn inline-flex items-center gap-3 px-8 py-3.5 border border-red-500/50 text-red-400 text-sm font-mono tracking-widest uppercase rounded-sm hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
           >
-            <span className="text-lg">View All Articles</span>
-            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            View All Articles
+            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
           </a>
         </motion.div>
       </div>
