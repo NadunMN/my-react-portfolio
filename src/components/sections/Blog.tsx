@@ -9,7 +9,7 @@ export const blogPosts = [
     title: "Secure Communication Setup between Apache Tomcat and MySQL using TLSv1.2",
     date: "March 15, 2024",
     excerpt:
-      "Exploring the latest trends and best practices in web development. Learn about cutting-edge technologies and frameworks.",
+      "secure environment where Apache Tomcat communicates with a MySQL database server using TLSv1.2. The objective is to configure both servers in such a way that Tomcat itself, not just applications deployed within it, is able to establish a secure connection with MySQL.",
     readTime: "5 min read",
     category: "Development",
     link: "https://example.com/blog/secure-communication-setup-between-apache-tomcat-and-mysql-using-tlsv1.2",
