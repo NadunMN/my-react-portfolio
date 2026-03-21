@@ -1,5 +1,3 @@
-# Secure Communication Between Apache Tomcat and MySQL Using TLSv1.2
-
 ## Introduction
 
 In modern distributed systems, secure communication between application servers and database servers is a critical requirement. Data exchanged between the middleware layer and the database often contains sensitive information such as credentials, financial records, and personal details. Without encryption, this traffic is vulnerable to eavesdropping and man-in-the-middle attacks.

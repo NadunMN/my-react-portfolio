@@ -89,12 +89,7 @@ export const DetailPage = ({
 
           {/* Content */}
           <section className="space-y-6">
-            {description && (
-              <p className="text-base md:text-lg text-white/70 leading-relaxed">
-                {description}
-              </p>
-            )}
-
+            
             {tags && tags.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">
                 {tags.map((tag) => (
