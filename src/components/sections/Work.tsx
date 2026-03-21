@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import brainMapContent from "@/works/brainMap.md?raw";
+import vpnContent from "@/works/vpn.md?raw";
 
 export const projects = [
   {
@@ -13,7 +13,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
     image: "/Images/brainMap.jpeg",
     link: "https://example.com/brainmap",
-    content: brainMapContent,
+    
   },
   {
     slug: "kottulabs",
@@ -32,6 +32,7 @@ export const projects = [
     tech: ["CyberSecurity", "Networking", "WireGuard", "DigitalOcean"],
     image: "/Images/wireguard-vpn-docker.jpg",
     link: "https://example.com/private-vpn",
+    content: vpnContent,
   },
 ];
 
