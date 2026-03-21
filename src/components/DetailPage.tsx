@@ -13,6 +13,7 @@ interface DetailPageProps {
   tags?: string[];
   backTo: string;
   backLabel: string;
+  children?: ReactNode;
 }
 
 export const DetailPage = ({
@@ -25,6 +26,7 @@ export const DetailPage = ({
   tags,
   backTo,
   backLabel,
+  children,
 }: DetailPageProps) => {
   return (
     <div className="relative min-h-screen bg-background text-white overflow-hidden">
@@ -105,6 +107,8 @@ export const DetailPage = ({
                 ))}
               </div>
             )}
+
+              {children}
           </section>
         </div>
       </main>

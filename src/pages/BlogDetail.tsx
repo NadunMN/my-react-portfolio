@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { DetailPage } from "@/components/DetailPage";
 import { blogPosts } from "@/components/sections/Blog";
 import { FiCalendar, FiClock } from "react-icons/fi";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -30,7 +32,15 @@ const BlogDetail = () => {
           </span>
         </>
       }
-    />
+    >
+      {post.content && (
+        <article className="mt-8 text-base md:text-lg text-white/80 leading-relaxed space-y-4">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {post.content as string}
+          </ReactMarkdown>
+        </article>
+      )}
+    </DetailPage>
   );
 };
 

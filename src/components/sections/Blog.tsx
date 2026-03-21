@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import secComContent from "@/blogs/SecCom.md?raw";
 
 export const blogPosts = [
   {
-    slug: "building-modern-web-applications",
-    title: "Building Modern Web Applications",
+    slug: "secure-communication-setup-between-apache-tomcat-and-mysql-using-tlsv1.2",
+    title: "Secure Communication Setup between Apache Tomcat and MySQL using TLSv1.2",
     date: "March 15, 2024",
     excerpt:
       "Exploring the latest trends and best practices in web development. Learn about cutting-edge technologies and frameworks.",
     readTime: "5 min read",
     category: "Development",
-    link: "https://example.com/blog/building-modern-web-applications",
+    link: "https://example.com/blog/secure-communication-setup-between-apache-tomcat-and-mysql-using-tlsv1.2",
+    content: secComContent,
   },
   {
     slug: "the-power-of-typescript",
