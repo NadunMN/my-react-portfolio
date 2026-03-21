@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
 import { CollectionPage } from "@/components/CollectionPage";
 import { blogPosts } from "@/components/sections/Blog";
+import { Link } from "react-router-dom";
 
 const Blogs = () => {
   return (
@@ -26,7 +27,7 @@ const Blogs = () => {
             </span>
           </div>
 
-          <div className="flex flex-1 flex-col gap-4 p-6">
+          <Link to={`/blog/${post.slug}`} className="flex flex-1 flex-col gap-4 p-6">
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center gap-4 text-xs text-white/40">
@@ -43,19 +44,18 @@ const Blogs = () => {
                   {post.title}
                 </h2>
               </div>
-              <button
-                type="button"
+              <span
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-400 group-hover:bg-red-500/10"
-                aria-label={`Open ${post.title}`}
+                aria-hidden="true"
               >
                 <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              </span>
             </div>
 
             <p className="text-sm text-white/60 leading-relaxed line-clamp-3">
               {post.excerpt}
             </p>
-          </div>
+          </Link>
         </motion.article>
       )}
     />

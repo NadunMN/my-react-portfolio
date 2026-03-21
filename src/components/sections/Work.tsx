@@ -5,25 +5,31 @@ import { Link } from "react-router-dom";
 
 export const projects = [
   {
+    slug: "brainmap",
     title: "brainMap",
-    description: "A digital platform that connects students with domain experts for ethical academic guidance, offering task management, real-time collaboration, and transparent expert support to promote active learning.",
+    description:
+      "A digital platform that connects students with domain experts for ethical academic guidance, offering task management, real-time collaboration, and transparent expert support to promote active learning.",
     tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
     image: "/Images/brainMap.jpeg",
-    link: "#",
+    link: "https://example.com/brainmap",
   },
   {
+    slug: "kottulabs",
     title: "KottuLabs",
-    description: "Kottu Labs, a comprehensive web-based restaurant management system built using PHP (MVC) and MySQL. Designed to support multi-branch operations, it streamlines restaurant workflows for both customers and staff.",
+    description:
+      "Kottu Labs, a comprehensive web-based restaurant management system built using PHP (MVC) and MySQL. Designed to support multi-branch operations, it streamlines restaurant workflows for both customers and staff.",
     tech: ["PHP", "SQL", "JavaScript", "Docker"],
     image: "/Images/kottulabs.jpeg",
-    link: "#",
+    link: "https://example.com/kottulabs",
   },
   {
+    slug: "private-vpn",
     title: "Private VPN",
-    description: "own VPN using WireGuard on a DigitalOcean Ubuntu 22.04 Droplet  Configured firewall rules, secured SSH access, generated client keys, and verified encrypted tunneling with live handshake monitoring.",
+    description:
+      "Own VPN using WireGuard on a DigitalOcean Ubuntu 22.04 Droplet. Configured firewall rules, secured SSH access, generated client keys, and verified encrypted tunneling with live handshake monitoring.",
     tech: ["CyberSecurity", "Networking", "WireGuard", "DigitalOcean"],
     image: "/Images/wireguard-vpn-docker.jpg",
-    link: "#",
+    link: "https://example.com/private-vpn",
   },
 ];
 
@@ -116,8 +122,7 @@ export const Work = () => {
                 </motion.div>
 
                 {/* Arrow Button */}
-                <motion.a
-                  href={project.link}
+                <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{
@@ -129,8 +134,10 @@ export const Work = () => {
                   }}
                   className="group inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-white/10 hover:border-red-500 hover:bg-red-500/10 transition-all duration-300"
                 >
-                  <FiArrowUpRight className="w-7 h-7 text-white/60 group-hover:text-red-500 transition-all duration-300 group-hover:rotate-45" />
-                </motion.a>
+                  <Link to={`/works/${project.slug}`} aria-label={`View ${project.title}`} className="flex items-center justify-center w-full h-full">
+                    <FiArrowUpRight className="w-7 h-7 text-white/60 group-hover:text-red-500 transition-all duration-300 group-hover:rotate-45" />
+                  </Link>
+                </motion.div>
               </div>
 
               {/* Right Side - Image */}
@@ -144,19 +151,21 @@ export const Work = () => {
                 }}
                 className="relative group cursor-pointer"
               >
-                <div className="relative overflow-hidden rounded-2xl">
-                  {/* Image */}
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-105"
-                  />
-                  
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  {/* Red accent border on hover */}
-                  <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30 transition-colors duration-500" />
-                </div>
+                <Link to={`/works/${project.slug}`} aria-label={project.title}>
+                  <div className="relative overflow-hidden rounded-2xl">
+                    {/* Image */}
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-105"
+                    />
+                    
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    {/* Red accent border on hover */}
+                    <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30 transition-colors duration-500" />
+                  </div>
+                </Link>
               </motion.div>
             </motion.div>
           ))}

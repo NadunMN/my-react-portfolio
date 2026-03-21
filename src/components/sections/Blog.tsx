@@ -4,28 +4,34 @@ import { Link } from "react-router-dom";
 
 export const blogPosts = [
   {
+    slug: "building-modern-web-applications",
     title: "Building Modern Web Applications",
     date: "March 15, 2024",
-    excerpt: "Exploring the latest trends and best practices in web development. Learn about cutting-edge technologies and frameworks.",
+    excerpt:
+      "Exploring the latest trends and best practices in web development. Learn about cutting-edge technologies and frameworks.",
     readTime: "5 min read",
     category: "Development",
-    link: "#",
+    link: "https://example.com/blog/building-modern-web-applications",
   },
   {
+    slug: "the-power-of-typescript",
     title: "The Power of TypeScript",
     date: "March 10, 2024",
-    excerpt: "Why TypeScript has become essential for large-scale applications. Discover type safety and productivity benefits.",
+    excerpt:
+      "Why TypeScript has become essential for large-scale applications. Discover type safety and productivity benefits.",
     readTime: "7 min read",
     category: "Programming",
-    link: "#",
+    link: "https://example.com/blog/the-power-of-typescript",
   },
   {
+    slug: "performance-optimization-tips",
     title: "Performance Optimization Tips",
     date: "March 5, 2024",
-    excerpt: "Practical techniques to make your web apps blazingly fast. From lazy loading to code splitting strategies.",
+    excerpt:
+      "Practical techniques to make your web apps blazingly fast. From lazy loading to code splitting strategies.",
     readTime: "6 min read",
     category: "Performance",
-    link: "#",
+    link: "https://example.com/blog/performance-optimization-tips",
   },
 ];
 
@@ -61,7 +67,7 @@ export const Blog = () => {
               whileHover={{ y: -8 }}
               className="group relative bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:shadow-[0_0_40px_-10px] hover:shadow-red-500/15 cursor-pointer"
             >
-              <a href={post.link} className="block">
+              <Link to={`/blog/${post.slug}`} className="block">
                 {/* Category badge */}
                 <div className="absolute top-4 right-4 z-10">
                   <span className="px-3 py-1 bg-red-500/10 border border-red-500/20 rounded-full text-red-400 text-xs font-mono tracking-wider">
@@ -104,7 +110,7 @@ export const Blog = () => {
 
                 {/* Bottom gradient accent */}
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </a>
+              </Link>
             </motion.article>
           ))}
         </div>
