@@ -78,7 +78,7 @@ export const About = () => {
             </p>
             <p className="text-lg text-white/60 leading-relaxed mb-10">
               That spirit of exploration also shapes how I approach
-              problem-solving in technology — always seeking new
+              problem-solving in technology always seeking new
               perspectives and creative solutions.
             </p>
 

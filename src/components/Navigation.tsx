@@ -70,6 +70,7 @@ export function Navigation() {
                       className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-white/5 border border-white/15 backdrop-blur-sm p-6 no-underline outline-none hover:bg-white/10 transition-colors duration-200 focus:shadow-md"
                       href="#hero"
                     >
+                      
                       <div className="mb-2 mt-4 text-lg font-semibold text-white">
                         Nadun Madusanka
                       </div>

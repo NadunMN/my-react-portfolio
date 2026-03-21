@@ -5,9 +5,9 @@ import { FiArrowUpRight } from "react-icons/fi";
 const projects = [
   {
     title: "brainMap",
-    description: "A low-code platform that helps you build, deploy, and manage enterprise-grade apps while accelerating development time.",
-    tech: ["Branding", "Web Design", "Design System", "Marketing"],
-    image: "/Images/4.jpeg",
+    description: "A digital platform that connects students with domain experts for ethical academic guidance, offering task management, real-time collaboration, and transparent expert support to promote active learning.",
+    tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
+    image: "/Images/brainMap.jpeg",
     link: "#",
   },
   {
