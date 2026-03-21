@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
-const blogPosts = [
+export const blogPosts = [
   {
     title: "Building Modern Web Applications",
     date: "March 15, 2024",
@@ -119,13 +120,13 @@ export const Blog = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <a
-            href="#"
+          <Link
+            to="/blog"
             className="group/btn inline-flex items-center gap-3 px-8 py-3.5 border border-red-500/50 text-red-400 text-sm font-mono tracking-widest uppercase rounded-sm hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
           >
             View All Articles
             <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

@@ -1,0 +1,74 @@
+import { motion } from "framer-motion";
+import { FiArrowUpRight } from "react-icons/fi";
+import { CollectionPage } from "@/components/CollectionPage";
+import { projects } from "@/components/sections/Work";
+
+const Works = () => {
+  return (
+    <CollectionPage
+      title="All Works & Projects"
+      subtitle="Selected case studies and experiments"
+      description="A deeper look into the products, experiments, and collaborations I have crafted. Each project blends engineering, design, and a strong focus on user experience."
+      badgeLabel="Works"
+      items={projects}
+      renderItem={(project, index) => (
+        <motion.article
+          key={project.title}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: index * 0.05 }}
+          whileHover={{ y: -6 }}
+          className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-red-500/40 hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.4)]"
+        >
+          {/* Image */}
+          <div className="relative overflow-hidden">
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-1 flex-col gap-4 p-6">
+            <div className="flex items-start justify-between gap-4">
+              <div className="space-y-2">
+                <span className="text-xs font-mono uppercase tracking-[0.25em] text-red-400/70">
+                  Project {String(index + 1).padStart(2, "0")}
+                </span>
+                <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-white group-hover:text-red-400 transition-colors duration-300">
+                  {project.title}
+                </h2>
+              </div>
+              <button
+                type="button"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-400 group-hover:bg-red-500/10"
+                aria-label={`Open ${project.title}`}
+              >
+                <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </button>
+            </div>
+
+            <p className="text-sm text-white/60 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="mt-2 flex flex-wrap gap-2">
+              {project.tech.map((tech: string) => (
+                <span
+                  key={tech}
+                  className="rounded-full border border-white/10 bg-black/40 px-3 py-1 text-xs font-mono uppercase tracking-[0.2em] text-white/60"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </motion.article>
+      )}
+    />
+  );
+};
+
+export default Works;
