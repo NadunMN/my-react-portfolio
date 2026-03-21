@@ -27,7 +27,10 @@ const Blogs = () => {
             </span>
           </div>
 
-          <Link to={`/blog/${post.slug}`} className="flex flex-1 flex-col gap-4 p-6">
+          <Link
+            to={`/blog/${post.slug}`}
+            className="flex flex-1 flex-col gap-4 p-6"
+          >
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-2">
                 <div className="flex flex-wrap items-center gap-4 text-xs text-white/40">
@@ -44,8 +47,9 @@ const Blogs = () => {
                   {post.title}
                 </h2>
               </div>
+
               <span
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-400 group-hover:bg-red-500/10"
+                className="absolute bottom-6 left-6 inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-400 group-hover:bg-red-500/10"
                 aria-hidden="true"
               >
                 <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
