@@ -38,7 +38,7 @@ const portfolioSections: { title: string; href: string; description: string }[] 
   {
     title: "Work",
     href: "#work",
-    description: "Explore my latest projects and professional portfolio.",
+    description: "Explore my latest works and professional portfolio.",
   },
   {
     title: "Experience",

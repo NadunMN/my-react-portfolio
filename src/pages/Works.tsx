@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 const Works = () => {
   return (
     <CollectionPage
-      title="All Works & Projects"
+      title="All Works"
       subtitle="Selected case studies and experiments"
-      description="A deeper look into the products, experiments, and collaborations I have crafted. Each project blends engineering, design, and a strong focus on user experience."
+      description="A deeper look into the products, experiments, and collaborations I have crafted. Each work blends engineering, design, and a strong focus on user experience."
       badgeLabel="Works"
       items={projects}
       renderItem={(project, index) => (
@@ -36,8 +36,8 @@ const Works = () => {
             <div className="flex flex-1 flex-col gap-4 p-6">
             <div className="flex items-start justify-between gap-4">
               <div className="space-y-2">
-                <span className="text-xs font-mono uppercase tracking-[0.25em] text-red-400/70">
-                  Project {String(index + 1).padStart(2, "0")}
+                  <span className="text-xs font-mono uppercase tracking-[0.25em] text-red-400/70">
+                  Work {String(index + 1).padStart(2, "0")}
                 </span>
                 <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-white group-hover:text-red-400 transition-colors duration-300">
                   {project.title}

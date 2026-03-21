@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import brainMapContent from "@/works/brainMap.md?raw";
 
 export const projects = [
   {
@@ -12,6 +13,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
     image: "/Images/brainMap.jpeg",
     link: "https://example.com/brainmap",
+    content: brainMapContent,
   },
   {
     slug: "kottulabs",
@@ -47,7 +49,7 @@ export const Work = () => {
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">03</span>
           <div className="h-px w-16 bg-red-500/50" />
-          <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Projects</span>
+          <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Works</span>
         </div>
 
         
@@ -67,7 +69,7 @@ export const Work = () => {
             >
               {/* Left Side - Content */}
               <div className="space-y-8">
-                {/* Project Number */}
+                {/* Work Number */}
                 <span className="text-red-500/40 font-mono text-sm tracking-widest">
                   {String(index + 1).padStart(2, "0")}
                 </span>
