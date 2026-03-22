@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 import { Navigation } from "@/components/Navigation";
 import { Link } from "react-router-dom";
 
@@ -44,7 +43,7 @@ export const DetailPage = ({
           <div className="flex flex-wrap items-center justify-between gap-4">
             <Link
               to={backTo}
-              className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-white/50 transition-colors hover:text-red-300 sm:text-xs"
+              className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-white/50 hover:text-red-300 sm:text-xs"
             >
               <span className="h-px w-6 bg-white/30" />
               {backLabel}
@@ -72,19 +71,14 @@ export const DetailPage = ({
 
           {/* Hero image */}
           {image && (
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5"
-            >
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5">
               <img
                 src={image}
                 alt={title}
                 className="h-full max-h-[240px] w-full object-cover sm:max-h-[320px] md:max-h-[420px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-            </motion.div>
+            </div>
           )}
 
           {/* Content */}

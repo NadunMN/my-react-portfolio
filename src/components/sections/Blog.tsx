@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import secComContent from "@/blogs/SecCom.md?raw";
@@ -48,18 +47,9 @@ export const Blog = () => {
         {/* Blog Grid */}
         <div className="grid gap-4 md:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
           {blogPosts.map((post, index) => (
-            <motion.article
+            <article
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-              }}
-              whileHover={{ y: -8 }}
-              className="group relative bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-red-500/30 transition-all duration-500 hover:shadow-[0_0_40px_-10px] hover:shadow-red-500/15 cursor-pointer"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-red-500/30 hover:shadow-[0_0_40px_-10px] hover:shadow-red-500/15"
             >
               <Link to={`/blog/${post.slug}`} className="block">
                 {/* Category badge */}
@@ -84,7 +74,7 @@ export const Blog = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="line-clamp-2 text-xl font-bold tracking-tight text-white/90 transition-colors duration-300 group-hover:text-red-500 sm:text-2xl">
+                  <h3 className="line-clamp-2 text-xl font-bold tracking-tight text-white/90 group-hover:text-red-500 sm:text-2xl">
                     {post.title}
                   </h3>
 
@@ -95,17 +85,17 @@ export const Blog = () => {
 
                   {/* Read More Link */}
                   <div className="flex items-center gap-2 pt-2 font-mono text-xs tracking-wider text-red-500 sm:text-sm">
-                    <span className="transition-transform duration-300 group-hover:translate-x-1">
+                    <span>
                       Read Article
                     </span>
-                    <FiArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                    <FiArrowUpRight className="w-4 h-4" />
                   </div>
                 </div>
 
                 {/* Bottom gradient accent */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/50 to-transparent opacity-0 group-hover:opacity-100" />
               </Link>
-            </motion.article>
+            </article>
           ))}
         </div>
 
@@ -113,21 +103,15 @@ export const Blog = () => {
         <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent sm:my-16" />
 
         {/* View All Blog Posts Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Link
             to="/blog"
-            className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-sm border border-red-500/50 px-5 py-3 text-xs font-mono uppercase tracking-widest text-red-400 transition-all duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white sm:w-auto sm:gap-3 sm:px-8 sm:py-3.5 sm:text-sm"
+            className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-sm border border-red-500/50 px-5 py-3 text-xs font-mono uppercase tracking-widest text-red-400 hover:border-red-500 hover:bg-red-500 hover:text-white sm:w-auto sm:gap-3 sm:px-8 sm:py-3.5 sm:text-sm"
           >
             View All Articles
-            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+            <FiArrowUpRight className="w-5 h-5" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

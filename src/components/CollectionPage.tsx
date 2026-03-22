@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
@@ -50,11 +49,11 @@ export function CollectionPage<T>({
             <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <button
                 onClick={() => navigate('/')}
-                className="group inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 transition-colors duration-200 hover:text-red-400 sm:text-xs"
+                className="group inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 hover:text-red-400 sm:text-xs"
               >
                 <ArrowLeft
                   size={13}
-                  className="transition-transform duration-200 group-hover:-translate-x-1"
+                  className="group-hover:-translate-x-1"
                 />
                 Back
               </button>
@@ -91,14 +90,9 @@ export function CollectionPage<T>({
           </div>
 
           {/* Collection grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {items.map((item, index) => renderItem(item, index))}
-          </motion.div>
+          </div>
         </div>
       </main>
     </div>

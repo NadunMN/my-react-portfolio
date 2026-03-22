@@ -1,5 +1,3 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import vpnContent from "@/works/vpn.md?raw";
@@ -40,9 +38,6 @@ export const projects = [
 ];
 
 export const Work = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
-
   return (
     <section id="work" className="relative min-h-screen overflow-hidden bg-background py-14 sm:py-20 lg:py-24">
       {/* Subtle background glow */}
@@ -58,17 +53,10 @@ export const Work = () => {
 
         
 
-        <div ref={sectionRef} className="space-y-16 sm:space-y-24 lg:space-y-32">
+        <div className="space-y-16 sm:space-y-24 lg:space-y-32">
           {projects.map((project, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 60 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.8,
-                delay: index * 0.2,
-                ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-              }}
               className="grid items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12"
             >
               {/* Left Side - Content */}
@@ -79,101 +67,54 @@ export const Work = () => {
                 </span>
 
                 {/* Title */}
-                <motion.h3
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.2 + 0.2,
-                    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-                  }}
-                  className="font-abel text-3xl font-black leading-none tracking-tight text-white/90 sm:text-5xl md:text-6xl"
-                >
+                <h3 className="font-abel text-3xl font-black leading-none tracking-tight text-white/90 sm:text-5xl md:text-6xl">
                   {project.title}
-                </motion.h3>
+                </h3>
 
                 {/* Description */}
-                <motion.p
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.2 + 0.3,
-                    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-                  }}
-                  className="max-w-xl text-base leading-relaxed text-white/50 sm:text-lg"
-                >
+                <p className="max-w-xl text-base leading-relaxed text-white/50 sm:text-lg">
                   {project.description}
-                </motion.p>
+                </p>
 
                 {/* Tech Tags */}
-                <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{
-                    duration: 0.7,
-                    delay: index * 0.2 + 0.4,
-                    ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-                  }}
-                  className="flex flex-wrap gap-2 sm:gap-3"
-                >
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="cursor-default rounded-full border border-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white/60 transition-all duration-300 hover:border-red-500/50 hover:text-red-400 sm:px-4"
+                      className="cursor-default rounded-full border border-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white/60 hover:border-red-500/50 hover:text-red-400 sm:px-4"
                     >
                       {tech}
                     </span>
                   ))}
-                </motion.div>
+                </div>
 
                 {/* Arrow Button */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.2 + 0.5,
-                    type: "spring" as const,
-                    stiffness: 200,
-                    damping: 15,
-                  }}
-                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/10 transition-all duration-300 hover:border-red-500 hover:bg-red-500/10 sm:h-16 sm:w-16"
-                >
+                <div className="group inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/10 hover:border-red-500 hover:bg-red-500/10 sm:h-16 sm:w-16">
                   <Link to={`/works/${project.slug}`} aria-label={`View ${project.title}`} className="flex items-center justify-center w-full h-full">
-                    <FiArrowUpRight className="h-5 w-5 text-white/60 transition-all duration-300 group-hover:rotate-45 group-hover:text-red-500 sm:h-7 sm:w-7" />
+                    <FiArrowUpRight className="h-5 w-5 text-white/60 group-hover:rotate-45 group-hover:text-red-500 sm:h-7 sm:w-7" />
                   </Link>
-                </motion.div>
+                </div>
               </div>
 
               {/* Right Side - Image */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, x: 50 }}
-                animate={isInView ? { opacity: 1, scale: 1, x: 0 } : {}}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.2 + 0.3,
-                  ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-                }}
-                className="relative group cursor-pointer"
-              >
+              <div className="relative group cursor-pointer">
                 <Link to={`/works/${project.slug}`} aria-label={project.title}>
                   <div className="relative overflow-hidden rounded-2xl">
                     {/* Image */}
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover aspect-[16/9] transition-transform duration-700 group-hover:scale-105"
+                      className="aspect-[16/9] h-full w-full object-cover group-hover:scale-105"
                     />
                     
                     {/* Overlay gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     {/* Red accent border on hover */}
-                    <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30 transition-colors duration-500" />
+                    <div className="absolute inset-0 rounded-2xl border border-white/5 group-hover:border-red-500/30" />
                   </div>
                 </Link>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -181,21 +122,15 @@ export const Work = () => {
         <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent sm:my-16" />
 
         {/* View All Works Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
+        <div className="text-center">
           <Link
             to="/works"
-            className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-sm border border-red-500/50 px-5 py-3 text-xs font-mono uppercase tracking-widest text-red-400 transition-all duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white sm:w-auto sm:gap-3 sm:px-8 sm:py-3.5 sm:text-sm"
+            className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-sm border border-red-500/50 px-5 py-3 text-xs font-mono uppercase tracking-widest text-red-400 hover:border-red-500 hover:bg-red-500 hover:text-white sm:w-auto sm:gap-3 sm:px-8 sm:py-3.5 sm:text-sm"
           >
             View All Works
-            <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+            <FiArrowUpRight className="w-5 h-5" />
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

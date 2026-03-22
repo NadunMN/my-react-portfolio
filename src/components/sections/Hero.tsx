@@ -1,31 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ClickSpark from '@/components/ClickSpark';
 import { FiMail, FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import { SiDiscord } from "react-icons/si";
 
 
 export function Hero() {
-  const [opacity, setOpacity] = useState(1);
   const [gifIndex, setGifIndex] = useState(0);
 
   const handleShift = () => setGifIndex((prev) => (prev + 1) % 3);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const fadeHeight = window.innerHeight * 0.6;
-      const newOpacity = Math.max(0, 1 - scrollY / fadeHeight);
-      setOpacity(newOpacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div
       className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-background md:shadow-xl"
-      style={{ opacity, transition: "opacity 0.1s ease-out" }}
     >
               
           <div className="relative min-h-screen w-full overflow-hidden bg-black">

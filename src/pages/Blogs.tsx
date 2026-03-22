@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
 import { CollectionPage } from "@/components/CollectionPage";
 import { blogPosts } from "@/components/sections/Blog";
@@ -13,13 +12,9 @@ const Blogs = () => {
       badgeLabel="Blog"
       items={blogPosts}
       renderItem={(post, index) => (
-        <motion.article
+        <article
           key={post.title}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.05 }}
-          whileHover={{ y: -6 }}
-          className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-red-500/40 hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.4)] cursor-pointer"
+          className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-red-500/40 hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.4)]"
         >
           <div className="absolute right-3 top-3 z-10 sm:right-4 sm:top-4">
             <span className="rounded-full border border-red-500/30 bg-red-500/10 px-2.5 py-1 text-[10px] font-mono uppercase tracking-[0.2em] text-red-300 sm:px-3 sm:text-xs">
@@ -43,16 +38,16 @@ const Blogs = () => {
                     <span>{post.readTime}</span>
                   </span>
                 </div>
-                <h2 className="line-clamp-2 pr-12 text-lg font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-red-400 sm:text-xl md:text-2xl">
+                <h2 className="line-clamp-2 pr-12 text-lg font-semibold tracking-tight text-white group-hover:text-red-400 sm:text-xl md:text-2xl">
                   {post.title}
                 </h2>
               </div>
 
               <span
-                className="absolute bottom-4 left-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:bg-red-500/10 group-hover:text-red-400 sm:bottom-6 sm:left-6 sm:h-10 sm:w-10"
+                className="absolute bottom-4 left-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 group-hover:border-red-500 group-hover:bg-red-500/10 group-hover:text-red-400 sm:bottom-6 sm:left-6 sm:h-10 sm:w-10"
                 aria-hidden="true"
               >
-                <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <FiArrowUpRight className="h-4 w-4" />
               </span>
             </div>
 
@@ -60,7 +55,7 @@ const Blogs = () => {
               {post.excerpt}
             </p>
           </Link>
-        </motion.article>
+          </article>
       )}
     />
   );

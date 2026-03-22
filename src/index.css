@@ -52,6 +52,13 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;

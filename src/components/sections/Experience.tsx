@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-
 const experiences = [
   {
     role: "Software Engineer",
@@ -33,39 +31,28 @@ export const Experience = () => {
 
         <div className="mx-auto space-y-0">
           {experiences.map((exp, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-                ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
-              }}
               className="group"
             >
               {/* Top border */}
-              <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 group-hover:from-red-500/30 group-hover:via-red-500/10 group-hover:to-red-500/30 transition-all duration-500" />
+              <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 group-hover:from-red-500/30 group-hover:via-red-500/10 group-hover:to-red-500/30" />
 
               {/* Experience Entry */}
-              <div className="flex items-center justify-between gap-3 overflow-x-auto rounded-lg py-3 transition-colors duration-500 group-hover:bg-red-500/[0.02] sm:grid sm:grid-cols-12 sm:gap-6 sm:py-2">
+              <div className="flex items-center justify-between gap-3 overflow-x-auto rounded-lg py-3 group-hover:bg-red-500/[0.02] sm:grid sm:grid-cols-12 sm:gap-6 sm:py-2">
                 {/* Left side - Icon & Company */}
                 <div className="flex min-w-max items-center gap-3 sm:col-span-6 sm:gap-6">
                   {/* Logo */}
-                  <motion.div
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg p-1 sm:h-32 sm:w-32 sm:p-2 md:h-44 md:w-44 lg:h-[200px] lg:w-[200px]"
-                  >
+                  <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg p-1 sm:h-32 sm:w-32 sm:p-2 md:h-44 md:w-44 lg:h-[200px] lg:w-[200px]">
                     <img
                       src={exp.logo}
                       alt={`${exp.company} logo`}
                       className="w-full h-full object-contain"
                     />
-                  </motion.div>
+                  </div>
 
                   {/* Company Name */}
-                  <h3 className="font-abel whitespace-nowrap text-xl font-black leading-none tracking-tight text-white/90 transition-colors duration-300 group-hover:text-red-500 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
+                  <h3 className="font-abel whitespace-nowrap text-xl font-black leading-none tracking-tight text-white/90 group-hover:text-red-500 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
                     {exp.company}
                   </h3>
                 </div>
@@ -82,7 +69,7 @@ export const Experience = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
 
           {/* Bottom border */}

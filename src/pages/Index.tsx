@@ -4,7 +4,6 @@ import { About } from "@/components/sections/About";
 import { Work } from "@/components/sections/Work";
 import { Experience } from "@/components/sections/Experience";
 import { Blog } from "@/components/sections/Blog";
-import { motion } from "framer-motion";
 
 const Index = () => {
   return (
@@ -14,58 +13,32 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <Hero />
-        
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
+
+        <div>
           <About />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div>
           <Experience />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div>
           <Work />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
+        <div>
           <Blog />
-        </motion.div>
+        </div>
       </main>
 
       {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="border-t border-border py-6 sm:py-8"
-      >
+      <footer className="border-t border-border py-6 sm:py-8">
         <div className="container mx-auto px-4 text-center sm:px-6">
           <p className="text-sm text-muted-foreground sm:text-base">
             © 2024 Nadun Madusanka. All rights reserved.
           </p>
         </div>
-      </motion.footer>
+      </footer>
     </div>
   );
 };

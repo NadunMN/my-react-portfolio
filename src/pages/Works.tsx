@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { CollectionPage } from "@/components/CollectionPage";
 import { projects } from "@/components/sections/Work";
@@ -13,13 +12,9 @@ const Works = () => {
       badgeLabel="Works"
       items={projects}
       renderItem={(project, index) => (
-        <motion.article
+        <article
           key={project.title}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: index * 0.05 }}
-          whileHover={{ y: -6 }}
-          className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm transition-all duration-500 hover:border-red-500/40 hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.4)] cursor-pointer"
+          className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-sm hover:border-red-500/40 hover:shadow-[0_0_40px_-10px_rgba(248,113,113,0.4)]"
         >
           <Link to={`/works/${project.slug}`} className="flex flex-1 flex-col">
             {/* Image */}
@@ -27,7 +22,7 @@ const Works = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-40 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-48 md:h-56"
+                className="h-40 w-full object-cover group-hover:scale-105 sm:h-48 md:h-56"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
@@ -39,15 +34,15 @@ const Works = () => {
                   <span className="text-xs font-mono uppercase tracking-[0.25em] text-red-400/70">
                   Work {String(index + 1).padStart(2, "0")}
                 </span>
-                <h2 className="text-lg font-semibold tracking-tight text-white transition-colors duration-300 group-hover:text-red-400 sm:text-xl md:text-2xl">
+                <h2 className="text-lg font-semibold tracking-tight text-white group-hover:text-red-400 sm:text-xl md:text-2xl">
                   {project.title}
                 </h2>
               </div>
               <span
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 transition-all duration-300 group-hover:border-red-500 group-hover:text-red-400 group-hover:bg-red-500/10"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/40 text-white/70 group-hover:border-red-500 group-hover:bg-red-500/10 group-hover:text-red-400"
                 aria-hidden="true"
               >
-                <FiArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <FiArrowUpRight className="h-4 w-4" />
               </span>
             </div>
 
@@ -67,7 +62,7 @@ const Works = () => {
             </div>
           </div>
           </Link>
-        </motion.article>
+        </article>
       )}
     />
   );
