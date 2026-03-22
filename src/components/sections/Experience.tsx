@@ -49,13 +49,13 @@ export const Experience = () => {
               <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 group-hover:from-red-500/30 group-hover:via-red-500/10 group-hover:to-red-500/30 transition-all duration-500" />
 
               {/* Experience Entry */}
-              <div className="grid grid-cols-12 items-center gap-4 rounded-lg py-3 transition-colors duration-500 group-hover:bg-red-500/[0.02] sm:gap-6 sm:py-2">
+              <div className="flex items-center justify-between gap-3 overflow-x-auto rounded-lg py-3 transition-colors duration-500 group-hover:bg-red-500/[0.02] sm:grid sm:grid-cols-12 sm:gap-6 sm:py-2">
                 {/* Left side - Icon & Company */}
-                <div className="col-span-12 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6 md:col-span-6">
+                <div className="flex min-w-max items-center gap-3 sm:col-span-6 sm:gap-6">
                   {/* Logo */}
                   <motion.div
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg p-1 sm:h-32 sm:w-32 sm:p-2 md:h-44 md:w-44 lg:h-[200px] lg:w-[200px]"
+                    className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg p-1 sm:h-32 sm:w-32 sm:p-2 md:h-44 md:w-44 lg:h-[200px] lg:w-[200px]"
                   >
                     <img
                       src={exp.logo}
@@ -65,19 +65,19 @@ export const Experience = () => {
                   </motion.div>
 
                   {/* Company Name */}
-                  <h3 className="font-abel text-3xl font-black leading-tight tracking-tight text-white/90 transition-colors duration-300 group-hover:text-red-500 sm:text-4xl md:text-5xl lg:text-6xl">
+                  <h3 className="font-abel whitespace-nowrap text-xl font-black leading-none tracking-tight text-white/90 transition-colors duration-300 group-hover:text-red-500 sm:text-4xl sm:leading-tight md:text-5xl lg:text-6xl">
                     {exp.company}
                   </h3>
                 </div>
 
                 {/* Right side - Period & Role */}
-                <div className="col-span-12 mt-2 flex flex-col items-start space-y-2 text-left md:col-span-6 md:mt-0 md:items-end md:text-right">
+                <div className="flex min-w-max flex-col items-end gap-1 text-right sm:col-span-6 sm:mt-0 sm:gap-2">
                   {/* Period */}
-                  <span className="w-fit rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-red-400 sm:text-xs md:ml-auto">
+                  <span className="w-fit whitespace-nowrap rounded-full border border-red-500/20 bg-red-500/10 px-2.5 py-1 text-[10px] font-mono uppercase tracking-wider text-red-400 sm:px-3 sm:text-xs md:ml-auto">
                     {exp.period}
                   </span>
                   {/* Role */}
-                  <p className="font-abel text-lg uppercase text-white/60 sm:text-xl md:text-2xl lg:text-3xl">
+                  <p className="font-abel whitespace-nowrap text-sm uppercase text-white/60 sm:text-xl md:text-2xl lg:text-3xl">
                     {exp.role}
                   </p>
                 </div>
