@@ -3,6 +3,8 @@ import { motion, useInView } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import vpnContent from "@/works/vpn.md?raw";
+import kottuLabsContent from "@/works/kottuLabs.md?raw";
+import brainMapContent from "@/works/brainMap.md?raw";
 
 export const projects = [
   {
@@ -13,7 +15,7 @@ export const projects = [
     tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
     image: "/Images/brainMap.jpeg",
     link: "https://example.com/brainmap",
-    
+    content: brainMapContent,
   },
   {
     slug: "kottulabs",
@@ -23,6 +25,7 @@ export const projects = [
     tech: ["PHP", "SQL", "JavaScript", "Docker"],
     image: "/Images/kottulabs.jpeg",
     link: "https://example.com/kottulabs",
+    content: kottuLabsContent,
   },
   {
     slug: "private-vpn",
