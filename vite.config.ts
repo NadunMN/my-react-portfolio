@@ -14,6 +14,6 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/my-react-portfolio/'
+  base: '/'
   // base: process.env.DOCKER_BUILD === "true" ? "/my-react-portfolio" : "/my-react-portfolio",
 }));
