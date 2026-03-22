@@ -8,7 +8,7 @@ export const blogPosts = [
   {
     slug: "secure-communication-setup-between-apache-tomcat-and-mysql-using-tlsv1.2",
     title: "Secure Communication Setup between Apache Tomcat and MySQL using TLSv1.2",
-    date: "March 15, 2024",
+    date: "March 15, 2026",
     excerpt:
       "secure environment where Apache Tomcat communicates with a MySQL database server using TLSv1.2. The objective is to configure both servers in such a way that Tomcat itself, not just applications deployed within it, is able to establish a secure connection with MySQL.",
     readTime: "5 min read",
@@ -19,7 +19,7 @@ export const blogPosts = [
   {
     slug: "high-availability-web-cluster",
     title: "High-Availability Web Cluster with Load Balancing & Automatic Failover",
-    date: "March 10, 2024",
+    date: "March 10, 2025",
     excerpt:
       "Building a production-grade high-availability web cluster with load balancing and automatic failover capabilities.",
     readTime: "7 min read",
