@@ -73,7 +73,7 @@ export const DetailPage = ({
           {image && (
             <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/5">
               <img
-                src={image}
+                src={'.' + image}
                 alt={title}
                 className="h-full max-h-[240px] w-full object-cover sm:max-h-[320px] md:max-h-[420px]"
               />

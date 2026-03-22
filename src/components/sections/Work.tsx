@@ -11,7 +11,7 @@ export const projects = [
     description:
       "A digital platform that connects students with domain experts for ethical academic guidance, offering task management, real-time collaboration, and transparent expert support to promote active learning.",
     tech: ["Java", "Spring Boot", "Next.js", "PostgreSQL", "Docker", "AWS"],
-    image: "/Images/brainMap.jpeg",
+    image: "./Images/brainMap.jpeg",
     link: "https://example.com/brainmap",
     content: brainMapContent,
   },
@@ -21,7 +21,7 @@ export const projects = [
     description:
       "Kottu Labs, a comprehensive web-based restaurant management system built using PHP (MVC) and MySQL. Designed to support multi-branch operations, it streamlines restaurant workflows for both customers and staff.",
     tech: ["PHP", "SQL", "JavaScript", "Docker"],
-    image: "/Images/kottulabs.jpeg",
+    image: "./Images/kottulabs.jpeg",
     link: "https://example.com/kottulabs",
     content: kottuLabsContent,
   },
@@ -31,7 +31,7 @@ export const projects = [
     description:
       "Own VPN using WireGuard on a DigitalOcean Ubuntu 22.04 Droplet. Configured firewall rules, secured SSH access, generated client keys, and verified encrypted tunneling with live handshake monitoring.",
     tech: ["CyberSecurity", "Networking", "WireGuard", "DigitalOcean"],
-    image: "/Images/wireguard-vpn-docker.jpg",
+    image: "./Images/wireguard-vpn-docker.jpg",
     link: "https://example.com/private-vpn",
     content: vpnContent,
   },

@@ -55,7 +55,7 @@ export const About = () => {
           <div className="w-full lg:w-1/2 group">
             <div className="relative overflow-hidden rounded-2xl">
               <img
-                src="/Images/WhatsApp Image 2025-11-19 at 00.37.36_1f373920.jpg"
+                src="./Images/WhatsApp Image 2025-11-19 at 00.37.36_1f373920.jpg"
                 alt="Nadun Madusanka"
                 className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               />

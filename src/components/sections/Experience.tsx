@@ -3,13 +3,13 @@ const experiences = [
     role: "Software Engineer",
     company: "CeyCode",
     period: "2025 - PRESENT",
-    logo: "/Images/2026-03-09_03-03__1_-removebg-preview.png",
+    logo: "./Images/2026-03-09_03-03__1_-removebg-preview.png",
   },
   {
     role: "ERP Technical Consultant - Intern",
     company: "Altria",
     period: "2025 - PRESENT",
-    logo: "/Images/Altria-Logo-OD@4x-1024x366.png",
+    logo: "./Images/Altria-Logo-OD@4x-1024x366.png",
   },
 ];
 
