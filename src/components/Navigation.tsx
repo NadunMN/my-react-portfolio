@@ -110,13 +110,6 @@ export function Navigation() {
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="#contact" legacyBehavior passHref>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-white hover:bg-white/15 hover:rounded-xl focus:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none")}>
-                Contact
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
       </div>
