@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight, FiCalendar, FiClock } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import secComContent from "@/blogs/SecCom.md?raw";
+import highWebClusterContent from "@/blogs/highWebCluster.md?raw";
 
 export const blogPosts = [
   {
@@ -16,24 +17,15 @@ export const blogPosts = [
     content: secComContent,
   },
   {
-    slug: "the-power-of-typescript",
-    title: "The Power of TypeScript",
+    slug: "high-availability-web-cluster",
+    title: "High-Availability Web Cluster with Load Balancing & Automatic Failover",
     date: "March 10, 2024",
     excerpt:
-      "Why TypeScript has become essential for large-scale applications. Discover type safety and productivity benefits.",
+      "Building a production-grade high-availability web cluster with load balancing and automatic failover capabilities.",
     readTime: "7 min read",
-    category: "Programming",
-    link: "https://example.com/blog/the-power-of-typescript",
-  },
-  {
-    slug: "performance-optimization-tips",
-    title: "Performance Optimization Tips",
-    date: "March 5, 2024",
-    excerpt:
-      "Practical techniques to make your web apps blazingly fast. From lazy loading to code splitting strategies.",
-    readTime: "6 min read",
-    category: "Performance",
-    link: "https://example.com/blog/performance-optimization-tips",
+    category: "Development",
+    link: "https://example.com/blog/high-availability-web-cluster",
+    content: highWebClusterContent,
   },
 ];
 
