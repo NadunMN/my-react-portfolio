@@ -17,13 +17,13 @@ const experiences = [
 
 export const Experience = () => {
   return (
-    <section id="experience" className="min-h-screen flex items-center justify-center py-24 bg-background relative overflow-hidden">
+    <section id="experience" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background py-14 sm:py-20 lg:py-24">
       {/* Subtle background glow */}
-      <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="pointer-events-none absolute right-0 top-1/3 h-[360px] w-[360px] rounded-full bg-red-500/[0.03] blur-3xl sm:h-[600px] sm:w-[600px]" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-16">
+        <div className="mb-10 flex items-center gap-3 sm:mb-16 sm:gap-4">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">02</span>
           <div className="h-px w-16 bg-red-500/50" />
           <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Experience</span>
@@ -49,13 +49,13 @@ export const Experience = () => {
               <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-white/10 group-hover:from-red-500/30 group-hover:via-red-500/10 group-hover:to-red-500/30 transition-all duration-500" />
 
               {/* Experience Entry */}
-              <div className="grid grid-cols-12 items-center gap-6 py-2 group-hover:bg-red-500/[0.02] transition-colors duration-500 rounded-lg">
+              <div className="grid grid-cols-12 items-center gap-4 rounded-lg py-3 transition-colors duration-500 group-hover:bg-red-500/[0.02] sm:gap-6 sm:py-2">
                 {/* Left side - Icon & Company */}
-                <div className="col-span-12 md:col-span-6 flex items-center gap-6">
+                <div className="col-span-12 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-6 md:col-span-6">
                   {/* Logo */}
                   <motion.div
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="flex-shrink-0 w-[200px] h-[200px] rounded-lg overflow-hidden p-2"
+                    className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg p-1 sm:h-32 sm:w-32 sm:p-2 md:h-44 md:w-44 lg:h-[200px] lg:w-[200px]"
                   >
                     <img
                       src={exp.logo}
@@ -65,19 +65,19 @@ export const Experience = () => {
                   </motion.div>
 
                   {/* Company Name */}
-                  <h3 className="font-abel text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white/90 group-hover:text-red-500 transition-colors duration-300">
+                  <h3 className="font-abel text-3xl font-black leading-tight tracking-tight text-white/90 transition-colors duration-300 group-hover:text-red-500 sm:text-4xl md:text-5xl lg:text-6xl">
                     {exp.company}
                   </h3>
                 </div>
 
                 {/* Right side - Period & Role */}
-                <div className="col-span-12 md:col-span-6 flex flex-col md:items-end md:text-right space-y-2">
+                <div className="col-span-12 mt-2 flex flex-col items-start space-y-2 text-left md:col-span-6 md:mt-0 md:items-end md:text-right">
                   {/* Period */}
-                  <span className="px-3 py-1 text-xs font-mono tracking-wider uppercase bg-red-500/10 border border-red-500/20 rounded-full text-red-400 w-fit md:ml-auto">
+                  <span className="w-fit rounded-full border border-red-500/20 bg-red-500/10 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-red-400 sm:text-xs md:ml-auto">
                     {exp.period}
                   </span>
                   {/* Role */}
-                  <p className="text-abel text-xl md:text-2xl lg:text-3xl uppercase text-white/60">
+                  <p className="font-abel text-lg uppercase text-white/60 sm:text-xl md:text-2xl lg:text-3xl">
                     {exp.role}
                   </p>
                 </div>

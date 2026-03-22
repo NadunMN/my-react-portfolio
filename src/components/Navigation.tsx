@@ -1,22 +1,6 @@
 import * as React from "react"
-
-type NextLikeLinkProps = React.PropsWithChildren<
-  React.ComponentPropsWithoutRef<"a"> & { href: string; legacyBehavior?: boolean; passHref?: boolean }
->;
-
-const Link: React.FC<NextLikeLinkProps> = ({ href, children, legacyBehavior, ...props }) => {
-  // If legacyBehavior is used (Next.js v12 style), forward the href to the child element
-  if (legacyBehavior && React.isValidElement(children)) {
-    return React.cloneElement(children as React.ReactElement, { href });
-  }
-
-  // Default: render a plain anchor
-  return (
-    <a href={href} {...props}>
-      {children}
-    </a>
-  );
-};
+import { Menu } from "lucide-react"
+import { Link as RouterLink } from "react-router-dom"
 
 import { cn } from "@/lib/utils"
 import {
@@ -26,94 +10,169 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
 
 const portfolioSections: { title: string; href: string; description: string }[] = [
   {
     title: "About",
-    href: "#about",
+    href: "/#about",
     description: "Learn about my background, journey, and passion for development.",
   },
   {
     title: "Work",
-    href: "#work",
+    href: "/#work",
     description: "Explore my latest works and professional portfolio.",
   },
   {
     title: "Experience",
-    href: "#experience",
+    href: "/#experience",
     description: "Discover my professional background and career milestones.",
   },
   {
     title: "Blog",
-    href: "#blog",
+    href: "/#blog",
     description: "Read my thoughts on technology, development, and industry trends.",
   },
 ]
 
 export function Navigation() {
+  const [isMobileOpen, setIsMobileOpen] = React.useState(false)
+
+  const sectionLinks = [
+    { label: "Home", href: "/#hero" },
+    { label: "About", href: "/#about" },
+    { label: "Work", href: "/#work" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Blog", href: "/#blog" },
+  ]
+
   return (
-    <div className="fixed top-6 right-6 z-50">
-      <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-lg shadow-black/20 px-2 py-1">
-      <NavigationMenu>
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/15 hover:rounded-xl focus:bg-white/15 data-[state=open]:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none">
-              Portfolio
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
-                  <NavigationMenuLink asChild>
+    <>
+      <div className="fixed right-4 top-4 z-50 md:hidden">
+        <Sheet open={isMobileOpen} onOpenChange={setIsMobileOpen}>
+          <SheetTrigger asChild>
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white backdrop-blur-md shadow-lg shadow-black/20 transition-colors hover:bg-white/20"
+              aria-label="Open navigation menu"
+            >
+              <Menu className="h-5 w-5" />
+            </button>
+          </SheetTrigger>
+
+          <SheetContent
+            side="right"
+            className="w-[85vw] border-white/20 bg-zinc-950/95 px-5 py-10 text-white backdrop-blur-lg"
+          >
+            <div className="space-y-8">
+              <div className="space-y-2">
+                <p className="text-xs font-mono uppercase tracking-[0.25em] text-white/40">Navigate</p>
+                <p className="text-2xl font-semibold text-white">Nadun Portfolio</p>
+              </div>
+
+              <div className="space-y-2">
+                {sectionLinks.map((item) => (
+                  <SheetClose asChild key={item.href}>
                     <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-xl bg-white/5 border border-white/15 backdrop-blur-sm p-6 no-underline outline-none hover:bg-white/10 transition-colors duration-200 focus:shadow-md"
-                      href="#hero"
+                      href={item.href}
+                      className="block rounded-lg border border-white/10 px-4 py-3 text-sm uppercase tracking-[0.2em] text-white/80 transition-colors hover:border-red-500/40 hover:bg-red-500/10 hover:text-red-300"
                     >
-                      
-                      <div className="mb-2 mt-4 text-lg font-semibold text-white">
-                        Nadun Madusanka
-                      </div>
-                      <p className="text-sm leading-tight text-white/60">
-                        Software Engineer passionate about creating innovative solutions.
-                      </p>
+                      {item.label}
                     </a>
-                  </NavigationMenuLink>
-                </li>
-                <ListItem href="#about" title="About">
-                  Learn about my background and journey.
-                </ListItem>
-                <ListItem href="#work" title="Work">
-                  Explore my latest projects and portfolio.
-                </ListItem>
-                <ListItem href="#experience" title="Experience">
-                  Discover my professional background.
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-transparent text-white hover:bg-white/15 hover:rounded-xl  focus:bg-white/15 data-[state=open]:bg-white/15 px-6 py-3 text-base font-medium h-auto border-none shadow-none">
-              Sections
-            </NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                {portfolioSections.map((section) => (
-                  <ListItem
-                    key={section.title}
-                    title={section.title}
-                    href={section.href}
-                  >
-                    {section.description}
-                  </ListItem>
+                  </SheetClose>
                 ))}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
+              </div>
+
+              <div className="space-y-3 border-t border-white/10 pt-6">
+                <SheetClose asChild>
+                  <RouterLink
+                    to="/works"
+                    className="block rounded-lg border border-white/10 px-4 py-3 text-sm uppercase tracking-[0.2em] text-white/80 transition-colors hover:border-red-500/40 hover:bg-red-500/10 hover:text-red-300"
+                  >
+                    All Works
+                  </RouterLink>
+                </SheetClose>
+                <SheetClose asChild>
+                  <RouterLink
+                    to="/blog"
+                    className="block rounded-lg border border-white/10 px-4 py-3 text-sm uppercase tracking-[0.2em] text-white/80 transition-colors hover:border-red-500/40 hover:bg-red-500/10 hover:text-red-300"
+                  >
+                    All Articles
+                  </RouterLink>
+                </SheetClose>
+              </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
-    </div>
+
+      <div className="fixed right-4 top-4 z-50 hidden md:block md:right-6 md:top-6">
+        <div className="rounded-2xl border border-white/20 bg-white/10 px-2 py-1 shadow-lg shadow-black/20 backdrop-blur-md">
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-auto border-none bg-transparent px-4 py-2 text-sm font-medium text-white shadow-none hover:rounded-xl hover:bg-white/15 focus:bg-white/15 sm:px-6 sm:py-3 sm:text-base data-[state=open]:bg-white/15">
+                  Portfolio
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid max-w-[min(92vw,500px)] gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <NavigationMenuLink asChild>
+                        <a
+                          className="flex h-full w-full select-none flex-col justify-end rounded-xl border border-white/15 bg-white/5 p-6 no-underline outline-none transition-colors duration-200 hover:bg-white/10 focus:shadow-md"
+                          href="/#hero"
+                        >
+                          <div className="mb-2 mt-4 text-lg font-semibold text-white">
+                            Nadun Madusanka
+                          </div>
+                          <p className="text-sm leading-tight text-white/60">
+                            Software Engineer passionate about creating innovative solutions.
+                          </p>
+                        </a>
+                      </NavigationMenuLink>
+                    </li>
+                    <ListItem href="/#about" title="About">
+                      Learn about my background and journey.
+                    </ListItem>
+                    <ListItem href="/#work" title="Work">
+                      Explore my latest projects and portfolio.
+                    </ListItem>
+                    <ListItem href="/#experience" title="Experience">
+                      Discover my professional background.
+                    </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="h-auto border-none bg-transparent px-4 py-2 text-sm font-medium text-white shadow-none hover:rounded-xl hover:bg-white/15 focus:bg-white/15 sm:px-6 sm:py-3 sm:text-base data-[state=open]:bg-white/15">
+                  Sections
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[min(92vw,400px)] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                    {portfolioSections.map((section) => (
+                      <ListItem
+                        key={section.title}
+                        title={section.title}
+                        href={section.href}
+                      >
+                        {section.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </div>
+
+    </>
   )
 }
 

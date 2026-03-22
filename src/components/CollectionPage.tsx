@@ -43,14 +43,14 @@ export function CollectionPage<T>({
       <div className="pointer-events-none absolute top-0 left-0 h-px w-64 bg-gradient-to-r from-red-500/60 to-transparent" />
       <div className="pointer-events-none absolute top-0 left-0 w-px h-64 bg-gradient-to-b from-red-500/60 to-transparent" />
 
-      <main className="relative z-10 pt-32 pb-20">
-        <div className="container mx-auto px-6 space-y-12">
+      <main className="relative z-10 pb-12 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-32">
+        <div className="container mx-auto space-y-8 px-4 sm:space-y-12 sm:px-6">
           {/* Header */}
-          <header className="max-w-3xl space-y-4">
-            <div className="flex items-center gap-4">
+          <header className="max-w-3xl space-y-3 sm:space-y-4">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <button
                 onClick={() => navigate('/')}
-                className="group inline-flex items-center gap-2 text-xs font-mono tracking-[0.2em] uppercase text-zinc-500 hover:text-red-400 transition-colors duration-200"
+                className="group inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500 transition-colors duration-200 hover:text-red-400 sm:text-xs"
               >
                 <ArrowLeft
                   size={13}
@@ -59,32 +59,32 @@ export function CollectionPage<T>({
                 Back
               </button>
 
-              <span className="inline-flex items-center gap-2 rounded-sm border border-red-500/30 bg-red-500/5 px-3 py-1 text-xs font-mono tracking-[0.25em] uppercase text-red-400">
+              <span className="inline-flex items-center gap-2 rounded-sm border border-red-500/30 bg-red-500/5 px-3 py-1 text-[10px] font-mono uppercase tracking-[0.25em] text-red-400 sm:text-xs">
                 <span className="h-1 w-1 rounded-full bg-red-500" />
                 {badgeLabel}
               </span>
             </div>
 
             <div className="space-y-2">
-              <h1 className="font-abel text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
+              <h1 className="font-abel text-3xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">
                 {title}
               </h1>
               {subtitle && (
-                <p className="text-zinc-500 text-xs font-mono tracking-[0.25em] uppercase">
+                <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-zinc-500 sm:text-xs">
                   {subtitle}
                 </p>
               )}
             </div>
 
             {description && (
-              <p className="max-w-2xl text-base md:text-lg text-zinc-400 leading-relaxed">
+              <p className="max-w-2xl text-sm leading-relaxed text-zinc-400 sm:text-base md:text-lg">
                 {description}
               </p>
             )}
           </header>
 
           {/* Divider */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-4">
             <div className="h-px flex-1 bg-zinc-800" />
             <div className="h-1 w-1 rounded-full bg-red-500/60" />
             <div className="h-px w-8 bg-zinc-800" />
@@ -95,7 +95,7 @@ export function CollectionPage<T>({
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3"
           >
             {items.map((item, index) => renderItem(item, index))}
           </motion.div>

@@ -58,10 +58,10 @@ const Index = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.5 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className="border-t border-border py-8"
+        className="border-t border-border py-6 sm:py-8"
       >
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
+        <div className="container mx-auto px-4 text-center sm:px-6">
+          <p className="text-sm text-muted-foreground sm:text-base">
             © 2024 Nadun Madusanka. All rights reserved.
           </p>
         </div>

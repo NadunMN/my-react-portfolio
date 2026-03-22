@@ -5,7 +5,6 @@ import { SiDiscord } from "react-icons/si";
 
 
 export function Hero() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [opacity, setOpacity] = useState(1);
   const [gifIndex, setGifIndex] = useState(0);
@@ -43,9 +42,9 @@ export function Hero() {
       <div className="absolute inset-0 z-0 backdrop-blur-sm bg-black/80" />
 
       {/* Hero Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 lg:px-16">
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-3 sm:px-6 lg:px-16">
 
-        <div className="absolute top-0 left-0 z-20 pt-6 pl-6 cursor-pointer" onClick={handleShift}>
+        <div className="absolute left-0 top-0 z-20 cursor-pointer pl-4 pt-4 sm:pl-6 sm:pt-6" onClick={handleShift}>
           <ClickSpark
             sparkColor='#fff'
             sparkSize={10}
@@ -53,26 +52,23 @@ export function Hero() {
             sparkCount={8}
             duration={400}
           >
-            <p className="text-gray-400">mood isn't fixed</p>
-            <p className="text-white">click here to shift it.</p>
+            <p className="text-xs text-gray-400 sm:text-sm">mood isn't fixed</p>
+            <p className="text-sm text-white sm:text-base">click here to shift it.</p>
           </ClickSpark>
         </div>
 
 
       
         {/* Main TextPressure Component */}
-        <div className="flex flex-col items-center justify-center w-full h-auto">
+        <div className="flex h-auto w-full flex-col items-center justify-center">
 
           <div className="relative w-full overflow-hidden">
             {/* GIF at center top over the letters */}
             <div
-              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              className="pointer-events-none absolute right-[min(12vw,8rem)] top-[clamp(0.25rem,2vw,1rem)] z-10 hidden overflow-hidden rounded-md sm:block"
               style={{
-                right: '15vw',
-                // transform: 'translateX(-50%)',
-                top: '0.5vw',
-                width: 'clamp(10rem, 18vw, 30rem)',
-                height: 'clamp(10rem, 15vw, 26rem)',
+                width: 'clamp(7rem, 22vw, 20rem)',
+                height: 'clamp(6rem, 18vw, 16rem)',
                 opacity: gifIndex === 0 ? 1 : 0,
               }}
             >
@@ -85,12 +81,10 @@ export function Hero() {
 
             {/* GIF at bottom-right of last N */}
             <div
-              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              className="pointer-events-none absolute bottom-[clamp(0.75rem,4vw,3rem)] right-[max(0.75rem,4vw)] z-10 hidden overflow-hidden rounded-md md:block"
               style={{
-                right: '5vw',
-                bottom: '5vw',
-                width: 'clamp(20rem, 25vw, 30rem)',
-                height: 'clamp(12rem, 17.5vw, 22rem)',
+                width: 'clamp(10rem, 24vw, 22rem)',
+                height: 'clamp(6rem, 15vw, 16rem)',
                 opacity: gifIndex === 1 ? 1 : 0,
               }}
             >
@@ -103,12 +97,10 @@ export function Hero() {
 
             {/* GIF at bottom-left of first N */}
             <div
-              className="absolute z-10 overflow-hidden rounded-md pointer-events-none "
+              className="pointer-events-none absolute bottom-[clamp(0.75rem,4vw,3rem)] left-[max(0.75rem,2vw)] z-10 hidden overflow-hidden rounded-md md:block"
               style={{
-                left: '2vw',
-                bottom: '5vw',
-                width: 'clamp(20rem, 25vw, 30rem)',
-                height: 'clamp(12rem, 17.5vw, 22rem)',
+                width: 'clamp(10rem, 24vw, 22rem)',
+                height: 'clamp(6rem, 15vw, 16rem)',
                 opacity: gifIndex === 2 ? 1 : 0,
               }}
             >
@@ -119,57 +111,57 @@ export function Hero() {
               />
             </div>
 
-            <p className="font-bebas-neue text-bold text-white w-full text-center" style={{ fontSize: 'clamp(5rem, 30vw, 60rem)' }}>NADUN</p>
+            <p className="font-bebas-neue text-bold w-full text-center text-white" style={{ fontSize: 'clamp(2.75rem, 24vw, 60rem)' }}>NADUN</p>
           </div>
 
           {/* Social Media Buttons */}
-          <div className="flex items-center justify-center gap-4 absolute bottom-20 z-20">
+          <div className="absolute bottom-8 left-1/2 z-20 flex w-[calc(100%-2rem)] -translate-x-1/2 items-center justify-center gap-2 px-1 sm:bottom-12 sm:w-auto sm:gap-4 md:bottom-20">
             <a
               href="mailto:nadunmaddepola@gmail.com"
-              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              className="group relative rounded-full border-2 border-white/20 bg-white/5 p-3 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 sm:p-4"
               aria-label="Email"
             >
-              <FiMail className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+              <FiMail className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-red-500 sm:h-6 sm:w-6" />
             </a>
 
             <a
               href="https://github.com/NadunMN"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              className="group relative rounded-full border-2 border-white/20 bg-white/5 p-3 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 sm:p-4"
               aria-label="GitHub"
             >
-              <FiGithub className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+              <FiGithub className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-red-500 sm:h-6 sm:w-6" />
             </a>
 
             <a
               href="https://linkedin.com/in/nadun-madusanka-mn"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              className="group relative rounded-full border-2 border-white/20 bg-white/5 p-3 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 sm:p-4"
               aria-label="LinkedIn"
             >
-              <FiLinkedin className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+              <FiLinkedin className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-red-500 sm:h-6 sm:w-6" />
             </a>
 
             <a
               href="https://www.instagram.com/nadu_nm/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              className="group relative rounded-full border-2 border-white/20 bg-white/5 p-3 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 sm:p-4"
               aria-label="Instagram"
             >
-              <FiInstagram className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+              <FiInstagram className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-red-500 sm:h-6 sm:w-6" />
             </a>
 
             <a
               href="https://discord.com/users/youruserid"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative p-4 rounded-full border-2 border-white/20 hover:border-red-500 bg-white/5 hover:bg-red-500/10 transition-all duration-300 hover:scale-110"
+              className="group relative rounded-full border-2 border-white/20 bg-white/5 p-3 transition-all duration-300 hover:scale-110 hover:border-red-500 hover:bg-red-500/10 sm:p-4"
               aria-label="Discord"
             >
-              <SiDiscord className="w-6 h-6 text-white group-hover:text-red-500 transition-colors duration-300" />
+              <SiDiscord className="h-5 w-5 text-white transition-colors duration-300 group-hover:text-red-500 sm:h-6 sm:w-6" />
             </a>
           </div>
 

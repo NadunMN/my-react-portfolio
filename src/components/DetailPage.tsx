@@ -38,36 +38,36 @@ export const DetailPage = ({
         <div className="absolute bottom-0 right-1/4 h-[520px] w-[520px] rounded-full bg-red-500/5 blur-3xl" />
       </div>
 
-      <main className="relative z-10 pt-28 pb-20">
-        <div className="container mx-auto px-6 max-w-5xl space-y-10">
+      <main className="relative z-10 pb-12 pt-20 sm:pb-16 sm:pt-24 md:pb-20 md:pt-28">
+        <div className="container mx-auto max-w-5xl space-y-8 px-4 sm:space-y-10 sm:px-6">
           {/* Back link */}
-          <div className="flex items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <Link
               to={backTo}
-              className="inline-flex items-center gap-2 text-xs font-mono tracking-[0.25em] uppercase text-white/50 hover:text-red-300 transition-colors"
+              className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-[0.25em] text-white/50 transition-colors hover:text-red-300 sm:text-xs"
             >
               <span className="h-px w-6 bg-white/30" />
               {backLabel}
             </Link>
 
-            <span className="inline-flex items-center gap-3 rounded-full border border-red-500/40 bg-red-500/10 px-4 py-1 text-xs font-mono tracking-[0.25em] uppercase text-red-300">
+            <span className="inline-flex items-center gap-3 rounded-full border border-red-500/40 bg-red-500/10 px-4 py-1 text-[10px] font-mono uppercase tracking-[0.25em] text-red-300 sm:text-xs">
               {badgeLabel}
             </span>
           </div>
 
           {/* Header */}
-          <header className="space-y-6">
+          <header className="space-y-4 sm:space-y-6">
             <div className="space-y-3">
-              <h1 className="font-abel text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white">
+              <h1 className="font-abel text-3xl font-black tracking-tight text-white sm:text-5xl md:text-6xl">
                 {title}
               </h1>
               {subtitle && (
-                <p className="text-red-300/80 text-sm font-mono tracking-[0.25em] uppercase">
+                <p className="text-[10px] font-mono uppercase tracking-[0.25em] text-red-300/80 sm:text-sm">
                   {subtitle}
                 </p>
               )}
             </div>
-            {meta && <div className="text-sm text-white/50 flex flex-wrap gap-4">{meta}</div>}
+            {meta && <div className="flex flex-wrap gap-3 text-xs text-white/50 sm:gap-4 sm:text-sm">{meta}</div>}
           </header>
 
           {/* Hero image */}
@@ -81,14 +81,14 @@ export const DetailPage = ({
               <img
                 src={image}
                 alt={title}
-                className="w-full h-full object-cover max-h-[420px]"
+                className="h-full max-h-[240px] w-full object-cover sm:max-h-[320px] md:max-h-[420px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </motion.div>
           )}
 
           {/* Content */}
-          <section className="space-y-6">
+          <section className="space-y-5 sm:space-y-6">
             
             {tags && tags.length > 0 && (
               <div className="mt-4 flex flex-wrap gap-2">

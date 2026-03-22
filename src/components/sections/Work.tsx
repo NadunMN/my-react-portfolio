@@ -44,13 +44,13 @@ export const Work = () => {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="work" className="min-h-screen py-24 bg-background relative overflow-hidden">
+    <section id="work" className="relative min-h-screen overflow-hidden bg-background py-14 sm:py-20 lg:py-24">
       {/* Subtle background glow */}
       <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
         {/* Section Label */}
-        <div className="flex items-center gap-4 mb-16">
+        <div className="mb-10 flex items-center gap-3 sm:mb-16 sm:gap-4">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">03</span>
           <div className="h-px w-16 bg-red-500/50" />
           <span className="text-white/50 font-mono text-sm tracking-widest uppercase">Works</span>
@@ -58,7 +58,7 @@ export const Work = () => {
 
         
 
-        <div ref={sectionRef} className="space-y-32">
+        <div ref={sectionRef} className="space-y-16 sm:space-y-24 lg:space-y-32">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -69,10 +69,10 @@ export const Work = () => {
                 delay: index * 0.2,
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               }}
-              className="grid md:grid-cols-2 gap-12 items-center"
+              className="grid items-center gap-6 md:grid-cols-2 md:gap-8 lg:gap-12"
             >
               {/* Left Side - Content */}
-              <div className="space-y-8">
+              <div className="space-y-5 sm:space-y-8">
                 {/* Work Number */}
                 <span className="text-red-500/40 font-mono text-sm tracking-widest">
                   {String(index + 1).padStart(2, "0")}
@@ -87,7 +87,7 @@ export const Work = () => {
                     delay: index * 0.2 + 0.2,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="font-abel text-6xl font-black tracking-tight leading-none text-white/90"
+                  className="font-abel text-3xl font-black leading-none tracking-tight text-white/90 sm:text-5xl md:text-6xl"
                 >
                   {project.title}
                 </motion.h3>
@@ -101,7 +101,7 @@ export const Work = () => {
                     delay: index * 0.2 + 0.3,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="text-white/50 text-lg leading-relaxed max-w-xl"
+                  className="max-w-xl text-base leading-relaxed text-white/50 sm:text-lg"
                 >
                   {project.description}
                 </motion.p>
@@ -115,12 +115,12 @@ export const Work = () => {
                     delay: index * 0.2 + 0.4,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="flex flex-wrap gap-3"
+                  className="flex flex-wrap gap-2 sm:gap-3"
                 >
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-4 py-1.5 text-xs font-mono tracking-wider uppercase border border-white/10 text-white/60 rounded-full hover:border-red-500/50 hover:text-red-400 transition-all duration-300 cursor-default"
+                      className="cursor-default rounded-full border border-white/10 px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-white/60 transition-all duration-300 hover:border-red-500/50 hover:text-red-400 sm:px-4"
                     >
                       {tech}
                     </span>
@@ -138,10 +138,10 @@ export const Work = () => {
                     stiffness: 200,
                     damping: 15,
                   }}
-                  className="group inline-flex items-center justify-center w-16 h-16 rounded-full border-2 border-white/10 hover:border-red-500 hover:bg-red-500/10 transition-all duration-300"
+                  className="group inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-white/10 transition-all duration-300 hover:border-red-500 hover:bg-red-500/10 sm:h-16 sm:w-16"
                 >
                   <Link to={`/works/${project.slug}`} aria-label={`View ${project.title}`} className="flex items-center justify-center w-full h-full">
-                    <FiArrowUpRight className="w-7 h-7 text-white/60 group-hover:text-red-500 transition-all duration-300 group-hover:rotate-45" />
+                    <FiArrowUpRight className="h-5 w-5 text-white/60 transition-all duration-300 group-hover:rotate-45 group-hover:text-red-500 sm:h-7 sm:w-7" />
                   </Link>
                 </motion.div>
               </div>
@@ -178,7 +178,7 @@ export const Work = () => {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-16" />
+        <div className="my-10 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent sm:my-16" />
 
         {/* View All Works Link */}
         <motion.div
@@ -190,7 +190,7 @@ export const Work = () => {
         >
           <Link
             to="/works"
-            className="group/btn inline-flex items-center gap-3 px-8 py-3.5 border border-red-500/50 text-red-400 text-sm font-mono tracking-widest uppercase rounded-sm hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
+            className="group/btn inline-flex w-full items-center justify-center gap-2 rounded-sm border border-red-500/50 px-5 py-3 text-xs font-mono uppercase tracking-widest text-red-400 transition-all duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white sm:w-auto sm:gap-3 sm:px-8 sm:py-3.5 sm:text-sm"
           >
             View All Works
             <FiArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

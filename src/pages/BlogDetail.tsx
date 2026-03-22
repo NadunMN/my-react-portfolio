@@ -34,7 +34,7 @@ const BlogDetail = () => {
       }
     >
       {post.content && (
-        <article className="mt-8 prose prose-invert prose-headings:text-white prose-a:text-accent prose-strong:text-white max-w-none">
+        <article className="prose prose-sm mt-8 max-w-none break-words prose-invert prose-headings:text-white prose-a:text-accent prose-strong:text-white sm:prose-base lg:prose-lg">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>
             {post.content as string}
           </ReactMarkdown>
