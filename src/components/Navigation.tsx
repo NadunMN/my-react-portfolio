@@ -18,38 +18,40 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 
-const portfolioSections: { title: string; href: string; description: string }[] = [
-  {
-    title: "About",
-    href: "/#about",
-    description: "Learn about my background, journey, and passion for development.",
-  },
-  {
-    title: "Work",
-    href: "/#work",
-    description: "Explore my latest works and professional portfolio.",
-  },
-  {
-    title: "Experience",
-    href: "/#experience",
-    description: "Discover my professional background and career milestones.",
-  },
-  {
-    title: "Blog",
-    href: "/#blog",
-    description: "Read my thoughts on technology, development, and industry trends.",
-  },
-]
-
 export function Navigation() {
   const [isMobileOpen, setIsMobileOpen] = React.useState(false)
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "")
+  const toSection = (section: string) => `${basePath}/#${section}`
+
+  const portfolioSections: { title: string; href: string; description: string }[] = [
+    {
+      title: "About",
+      href: toSection("about"),
+      description: "Learn about my background, journey, and passion for development.",
+    },
+    {
+      title: "Work",
+      href: toSection("work"),
+      description: "Explore my latest works and professional portfolio.",
+    },
+    {
+      title: "Experience",
+      href: toSection("experience"),
+      description: "Discover my professional background and career milestones.",
+    },
+    {
+      title: "Blog",
+      href: toSection("blog"),
+      description: "Read my thoughts on technology, development, and industry trends.",
+    },
+  ]
 
   const sectionLinks = [
-    { label: "Home", href: "/#hero" },
-    { label: "About", href: "/#about" },
-    { label: "Work", href: "/#work" },
-    { label: "Experience", href: "/#experience" },
-    { label: "Blog", href: "/#blog" },
+    { label: "Home", href: toSection("hero") },
+    { label: "About", href: toSection("about") },
+    { label: "Work", href: toSection("work") },
+    { label: "Experience", href: toSection("experience") },
+    { label: "Blog", href: toSection("blog") },
   ]
 
   return (
@@ -126,7 +128,7 @@ export function Navigation() {
                       <NavigationMenuLink asChild>
                         <a
                           className="flex h-full w-full select-none flex-col justify-end rounded-xl border border-white/15 bg-white/5 p-6 no-underline outline-none transition-colors duration-200 hover:bg-white/10 focus:shadow-md"
-                          href="/#hero"
+                          href={toSection("hero")}
                         >
                           <div className="mb-2 mt-4 text-lg font-semibold text-white">
                             Nadun Madusanka
@@ -137,13 +139,13 @@ export function Navigation() {
                         </a>
                       </NavigationMenuLink>
                     </li>
-                    <ListItem href="/#about" title="About">
+                    <ListItem href={toSection("about")} title="About">
                       Learn about my background and journey.
                     </ListItem>
-                    <ListItem href="/#work" title="Work">
+                    <ListItem href={toSection("work")} title="Work">
                       Explore my latest projects and portfolio.
                     </ListItem>
-                    <ListItem href="/#experience" title="Experience">
+                    <ListItem href={toSection("experience")} title="Experience">
                       Discover my professional background.
                     </ListItem>
                   </ul>
