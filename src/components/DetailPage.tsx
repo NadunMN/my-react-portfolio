@@ -38,8 +38,8 @@ export const DetailPage = ({
         <div className="absolute bottom-0 right-1/4 h-[520px] w-[520px] rounded-full bg-red-500/5 blur-3xl" />
       </div>
 
-      <main className="relative z-10 pt-28 pb-20">
-        <div className="container mx-auto px-6 max-w-5xl space-y-10">
+      <main className="relative z-10 pt-20 sm:pt-28 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 max-w-5xl space-y-10">
           {/* Back link */}
           <div className="flex items-center justify-between gap-4">
             <Link

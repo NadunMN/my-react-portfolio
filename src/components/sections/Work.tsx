@@ -48,7 +48,7 @@ export const Work = () => {
       {/* Subtle background glow */}
       <div className="absolute bottom-0 left-1/4 w-[700px] h-[700px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">03</span>
@@ -58,7 +58,7 @@ export const Work = () => {
 
         
 
-        <div ref={sectionRef} className="space-y-32">
+        <div ref={sectionRef} className="space-y-20 sm:space-y-32">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -69,7 +69,7 @@ export const Work = () => {
                 delay: index * 0.2,
                 ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
               }}
-              className="grid md:grid-cols-2 gap-12 items-center"
+              className="grid md:grid-cols-2 gap-8 md:gap-12 items-center"
             >
               {/* Left Side - Content */}
               <div className="space-y-8">
@@ -87,7 +87,7 @@ export const Work = () => {
                     delay: index * 0.2 + 0.2,
                     ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                   }}
-                  className="font-abel text-6xl font-black tracking-tight leading-none text-white/90"
+                  className="font-abel text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white/90"
                 >
                   {project.title}
                 </motion.h3>

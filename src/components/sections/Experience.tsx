@@ -21,7 +21,7 @@ export const Experience = () => {
       {/* Subtle background glow */}
       <div className="absolute top-1/3 right-0 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">02</span>
@@ -55,7 +55,7 @@ export const Experience = () => {
                   {/* Logo */}
                   <motion.div
                     transition={{ type: "spring", stiffness: 300 }}
-                    className="flex-shrink-0 w-[200px] h-[200px] rounded-lg overflow-hidden p-2"
+                    className="flex-shrink-0 w-24 h-24 sm:w-36 sm:h-36 md:w-[200px] md:h-[200px] rounded-lg overflow-hidden p-2"
                   >
                     <img
                       src={exp.logo}
@@ -65,7 +65,7 @@ export const Experience = () => {
                   </motion.div>
 
                   {/* Company Name */}
-                  <h3 className="font-abel text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white/90 group-hover:text-red-500 transition-colors duration-300">
+                  <h3 className="font-abel text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-none text-white/90 group-hover:text-red-500 transition-colors duration-300">
                     {exp.company}
                   </h3>
                 </div>
@@ -77,7 +77,7 @@ export const Experience = () => {
                     {exp.period}
                   </span>
                   {/* Role */}
-                  <p className="text-abel text-xl md:text-2xl lg:text-3xl uppercase text-white/60">
+                  <p className="text-abel text-lg sm:text-xl md:text-2xl lg:text-3xl uppercase text-white/60">
                     {exp.role}
                   </p>
                 </div>

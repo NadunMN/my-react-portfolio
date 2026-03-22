@@ -43,8 +43,8 @@ export function CollectionPage<T>({
       <div className="pointer-events-none absolute top-0 left-0 h-px w-64 bg-gradient-to-r from-red-500/60 to-transparent" />
       <div className="pointer-events-none absolute top-0 left-0 w-px h-64 bg-gradient-to-b from-red-500/60 to-transparent" />
 
-      <main className="relative z-10 pt-32 pb-20">
-        <div className="container mx-auto px-6 space-y-12">
+      <main className="relative z-10 pt-24 sm:pt-32 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 space-y-12">
           {/* Header */}
           <header className="max-w-3xl space-y-4">
             <div className="flex items-center gap-4">

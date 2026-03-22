@@ -15,7 +15,7 @@ export const About = () => {
       {/* Subtle background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 flex flex-col justify-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 flex flex-col justify-center relative z-10">
 
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
@@ -26,7 +26,7 @@ export const About = () => {
 
         {/* Hero Statement */}
         <div className="max-w-5xl">
-          <p className="text-4xl md:text-5xl lg:text-6xl font-light text-white/90 leading-[1.15] tracking-tight">
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-white/90 leading-[1.15] tracking-tight">
             Computer Science undergraduate passionate about{" "}
             <span className="text-red-500 font-normal">backend development</span>,{" "}
             <span className="text-red-500 font-normal">system design</span>, and{" "}
@@ -57,7 +57,7 @@ export const About = () => {
               <img
                 src="/Images/WhatsApp Image 2025-11-19 at 00.37.36_1f373920.jpg"
                 alt="Nadun Madusanka"
-                className="w-full h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-[300px] sm:h-[380px] md:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

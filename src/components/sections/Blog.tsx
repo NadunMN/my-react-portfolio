@@ -35,7 +35,7 @@ export const Blog = () => {
       {/* Subtle background glow */}
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] bg-red-500/[0.03] rounded-full blur-3xl pointer-events-none" />
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Label */}
         <div className="flex items-center gap-4 mb-16">
           <span className="text-red-500 font-mono text-sm tracking-widest uppercase">04</span>
